@@ -1,0 +1,11 @@
+---
+import Link from "../link/Link.astro";
+import Icon from "~/components/icon/Icon.astro";
+
+const {classes} = Astro.props;
+---
+<div class:list={['topline__reg', classes]}>
+  <Link text="Регистрация" icon={true}>
+    <Icon slot="icon" size="sm" name="user-add" />
+  </Link>
+</div>

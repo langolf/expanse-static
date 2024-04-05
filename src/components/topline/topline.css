@@ -1,0 +1,192 @@
+.topline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 100dvh;
+  background: theme('colors.ex.dark.900');
+  user-select: none;
+
+  @media screen(xl) {
+    min-height: theme('size.16');
+    bottom: auto;
+  }
+}
+
+.topline__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media screen(xl) {
+    flex-direction: row;
+  }
+}
+
+.topline__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: theme('spacing.4');
+  min-height: theme('size.16');
+
+  @media screen(xl) {
+    flex-direction: row;
+    padding: 0;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      border-right: 1px solid theme('colors.ui.separator');
+      padding-left: theme('spacing.4');
+      padding-right: theme('spacing.4');
+    }
+  }
+}
+
+.topline__online {
+  display: flex;
+  align-items: center;
+  font-size: theme('fontSize.xsm');
+
+  @media screen(xl) {
+    flex-direction: column;
+    justify-content: center;
+    padding-left: theme('spacing.4');
+    padding-right: theme('spacing.4');
+  }
+}
+
+.topline__toggle {
+  position: absolute;
+  cursor: pointer;
+  border-left: 1px solid theme('colors.ui.separator');
+  top: 0;
+  right: 0;
+  width: theme('size.16');
+  height: theme('size.16');
+}
+
+.topline__lang {
+  cursor: pointer;
+}
+
+.topline__nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @media screen(xl) {
+    flex-direction: row;
+    flex: 1 1 auto;
+  }
+}
+
+.topline__menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
+
+  @media screen(xl) {
+    flex-direction: row;
+    justify-content: initial;
+  }
+}
+
+.topline__menu-item {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.topline__nav-link {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  padding-left: theme('spacing.4');
+  padding-right: theme('spacing.4');
+
+  @media screen(xl) {
+    font-size: 13px;
+    justify-content: center;
+    padding-left: theme('spacing.2');
+    padding-right: theme('spacing.2');
+  }
+}
+
+.topline__reg {
+  display: flex;
+  min-height: theme('size.16');
+  
+  &.mobile {
+    width: theme('size.16');
+    height: theme('size.16');
+    background: theme('colors.ex.firmcolor');
+    
+    .link {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .link__text {
+      font-size: 0;
+      display: none;
+    }
+  }
+}
+
+.topline__reg :global(.link) {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  background: theme('colors.ex.firmcolor');
+
+  @media screen(xl) {
+    background: transparent;
+    padding-left: theme('spacing.4');
+    padding-right: theme('spacing.4');
+  }
+}
+
+.topline__login {
+  display: flex;
+  min-height: theme('size.16');
+}
+
+.topline__login :global(.link) {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  @apply flex items-center justify-center flex-auto;
+
+  @media screen(xl) {
+    padding-left: theme('spacing.4');
+    padding-right: theme('spacing.4');
+  }
+}
+
+.topline__inner > *,
+.topline__menu li:not(:last-child) {
+  border-bottom: 1px solid #28232f;
+
+  @media screen(xl) {
+    border-bottom: 0;
+    border-right: 1px solid #28232f;
+  }
+}
+
+.topline__lang {
+  color: #443c4f;
+}
+
+.topline.is-closed {
+  bottom: initial;
+  min-height: initial;
+
+  .topline__inner {
+    display: none;
+  }
+}

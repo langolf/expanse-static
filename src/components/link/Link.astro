@@ -1,0 +1,16 @@
+---
+const {href, text, icon} = Astro.props;
+---
+
+<a href={href} class:list={["link"]}>
+  {icon && <span class="link__icon flex grow-0 justify-center mr-2"><slot name="icon"/></span>}
+  <span class="link__text flex-initial">
+    {text}
+  </span>
+</a>
+
+<style>
+  svg {
+    fill: currentColor;
+  }
+</style>

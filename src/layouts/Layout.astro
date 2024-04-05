@@ -1,0 +1,26 @@
+---
+import '../../src/assets/styles/tailwind.css';
+import CustomStyles from '../components/CustomStyles.astro';
+import BasicScripts from '../components/common/BasicScripts.astro';
+
+// import BasicScripts from '~/components/common/BasicScripts.astro';
+---
+
+<!doctype html>
+<html lang="ru" class="2xl:text-[20px]">
+  <head>
+    <CustomStyles />
+  </head>
+
+  <body class="antialiased text-default bg-page tracking-tight">
+    <slot />
+
+    <BasicScripts />
+
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

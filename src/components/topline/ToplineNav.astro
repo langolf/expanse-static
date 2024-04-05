@@ -1,0 +1,18 @@
+---
+const nav = ['О сервере', 'Скачать', 'База знаний', 'Сообщество', 'FAQ', 'Пожертвования'];
+
+---
+<nav class="topline__nav">
+  <ul class="topline__menu">
+    {
+      nav.map((id) => {
+        return (
+          <li class="topline__menu-item">
+            <a class="topline__nav-link" href="/">
+              {id}
+            </a>
+          </li>)
+      })
+    }
+  </ul>
+</nav>

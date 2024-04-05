@@ -1,0 +1,10 @@
+---
+import {Icon} from "astro-icon/components";
+
+const {classes = ''} = Astro.props;
+---
+
+<div class:list={["topline__lang", classes]}>
+  <Icon name="globe"/>
+  <span>en</span>
+</div>
