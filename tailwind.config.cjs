@@ -17,6 +17,9 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      size: {
+        inner: '1060px',
+      },
       fontSize: {
         xsm: '0.75rem',
       },

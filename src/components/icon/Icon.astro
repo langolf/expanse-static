@@ -1,16 +1,16 @@
 ---
-import {Icon} from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
-const {name, size, classes} = Astro.props;
+const { name, size, class: className, ...rest } = Astro.props;
 ---
 
-<Icon class:list={['icon', {[`icon--size-${size}`]: size}, classes]} {name}/>
+<Icon class:list={['icon', { [`icon--size-${size}`]: size }, className]} {name} {...rest} />
 
 <style lang="postcss">
   :root {
     --icon-color: currentColor;
   }
-  
+
   .icon {
     display: inline-block;
     text-align: center;
@@ -25,5 +25,9 @@ const {name, size, classes} = Astro.props;
 
   .icon--size-md {
     @apply w-6 h-6;
+  }
+
+  .icon--size-lg {
+    @apply size-6;
   }
 </style>

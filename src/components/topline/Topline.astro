@@ -1,57 +1,55 @@
 ---
-import './topline.css'
+import './topline.css';
 
-import ToplineNav from "./ToplineNav.astro";
-import ToplineToggle from "./ToplineToggle.astro";
-import ToplineReg from "./ToplineReg.astro";
-import ToplineLanguage from "./ToplineLanguage.astro";
-import ToplineLogin from "./ToplineLogin.astro";
-import ToplineLogo from "./ToplineLogo.astro";
+import ToplineNav from './ToplineNav.astro';
+import ToplineToggle from './ToplineToggle.astro';
+import ToplineReg from './ToplineReg.astro';
+import ToplineLanguage from './ToplineLanguage.astro';
+import ToplineLogin from './ToplineLogin.astro';
+import ToplineLogo from './ToplineLogo.astro';
 
 export interface Props {
   isClosed?: boolean;
 }
-  
-const {isClosed} = Astro.props;
+
+const { isClosed } = Astro.props;
 ---
 
 <script>
   const toggle = document.querySelector('[data-aw-toggle-menu]');
   const topline = document.querySelector('[data-aw-topline]');
-  
+
   toggle.addEventListener('click', () => {
     topline.classList.toggle('is-closed');
-  })
-
+  });
 </script>
 
-<header data-aw-topline class:list={['topline', {isClosed: isClosed}]}>
-  
+<header data-aw-topline class:list={['topline', { isClosed: isClosed }]}>
   <div class="topline__desktop hidden xl:block">
-    <div class="topline__inner">
-      <ToplineLogo/>
-      <ToplineNav/>
-      <ToplineLanguage/>
-      <ToplineReg/>
-      <ToplineLogin/>
+    <div class="topline__inner container mx-auto">
+      <ToplineLogo />
+      <ToplineNav />
+      <ToplineLanguage />
+      <ToplineReg />
+      <ToplineLogin />
     </div>
   </div>
 
-  <div class="topline__mobile xl:hidden">
-    <div>
-      <ToplineLogo/>
+  <div class="topline__mobile flex xl:hidden">
+    <div class="border-b border-b-ui-separator">
+      <ToplineLogo />
       <ToplineReg classes="mobile" />
-      <ToplineToggle isClosed={isClosed}/>
+      <ToplineToggle isClosed={isClosed} />
     </div>
-    
+
     <div class="topline__inner">
-      <ToplineNav/>
-      
-      <ToplineReg/>
-      
+      <ToplineNav />
+
+      <ToplineReg />
+
       <div class="flex">
-        <ToplineLanguage/>
-        <ToplineLogin/>
+        <ToplineLanguage classes="px-6 border-r border-r-ui-separator" />
+        <ToplineLogin />
       </div>
     </div>
   </div>

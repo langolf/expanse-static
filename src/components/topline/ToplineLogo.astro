@@ -1,17 +1,18 @@
 ---
-import {Icon} from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 import Img from './assets/logo.svg';
 ---
+
 <div class="topline__logo">
   <div class="logo">
-    <img src={Img.src}>
+    <img src={Img.src} />
   </div>
 
   <div class="topline__online">
     <span class="opacity-50 mr-1">Fuji x1</span>
     <span class="flex items-center text-ex-acidic">
-          <Icon class="w-[11px] h-[11px] mr-1" name="online-badge-icon"/>
-          <span class="text-[11px] leading-[0px]">Online</span>
-        </span>
+      <Icon class="w-[11px] h-[11px] mr-1" name="online-badge-icon" />
+      <span class="text-[11px] leading-[0px]">Online</span>
+    </span>
   </div>
 </div>

@@ -1,0 +1,51 @@
+---
+import './hero.css';
+import Image from 'astro/components/Image.astro';
+import imageSkullSrc from '~/assets/images/skull-fire.png';
+import imageLogoSrc from './assets/symbol-vertical.svg';
+import Icon from '~/components/icon/Icon.astro';
+import Player from '~/components/player/Player.astro';
+const { rest } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero__bg">
+    <Image src={imageSkullSrc} alt="" />
+  </div>
+
+  <div class="hero__inner inner">
+    <div class="hero__logo">
+      <Image src={imageLogoSrc} alt="logo" />
+    </div>
+
+    <div class="hero__info">
+      <div class="relative">
+        <div class="absolute left-0 top-0">
+          <svg width="429" height="97" viewBox="0 0 429 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.957361 43.1287L1.48247 0.670411L38.9567 10.8654L59.6646 1.38999L428.329 15.681L403.286 86.146L327.06 96.7041L315.212 80.5563L38.0321 85.6289L0.622933 70.1651L9.90846 43.2394L0.957361 43.1287Z"
+              fill="#EE2759"></path>
+          </svg>
+        </div>
+        <div class="relative z-1 font-semibold left-[20px] text-[60px]">Открытие</div>
+      </div>
+
+      <div class="flex items-center">
+        <div class="text-[52px]">
+          <b>13 мая</b>
+          <span>в 20:00</span>
+        </div>
+        <b class="opacity-40 text-[18px]">GMT +3</b>
+      </div>
+
+      <div class="hero__player">
+        <Player />
+        <div class="hero__quote">
+          <span>Тут фишек много для людей, эмоций, страсти и идей</span>
+        </div>
+      </div>
+
+      <button class="hero__reg" type="button"> Регистрация </button>
+    </div>
+  </div>
+</section>

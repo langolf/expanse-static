@@ -1,5 +1,7 @@
 .topline {
+  display: flex;
   position: absolute;
+  z-index: 9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -75,7 +77,7 @@
 .topline__nav {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1 auto;
 
   @media screen(xl) {
     flex-direction: row;
@@ -86,10 +88,11 @@
 .topline__menu {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   justify-content: space-between;
 
   @media screen(xl) {
+    flex: 1 1 auto;
     flex-direction: row;
     justify-content: initial;
   }
@@ -118,53 +121,76 @@
 .topline__reg {
   display: flex;
   min-height: theme('size.16');
-  
-  &.mobile {
-    width: theme('size.16');
-    height: theme('size.16');
-    background: theme('colors.ex.firmcolor');
-    
-    .link {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .link__text {
-      font-size: 0;
-      display: none;
+  background: theme('colors.ex.firmcolor');
+
+  .link {
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  &:not(.mobile) {
+    @media screen(xl) {
+      background: transparent;
+
+      .link {
+        padding-left: theme('spacing.4');
+        padding-right: theme('spacing.4');
+      }
     }
   }
 }
 
-.topline__reg :global(.link) {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
+.topline__reg.mobile {
+  display: none;
+  width: theme('size.16');
+  height: theme('size.16');
   background: theme('colors.ex.firmcolor');
+  position: absolute;
+  right: theme('size.16');
+  top: 0;
 
-  @media screen(xl) {
-    background: transparent;
-    padding-left: theme('spacing.4');
-    padding-right: theme('spacing.4');
+  .link {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link__text {
+    font-size: 0;
+    display: none;
+  }
+
+  .link__icon {
+    margin-right: 0;
   }
 }
 
 .topline__login {
   display: flex;
-  min-height: theme('size.16');
-}
-
-.topline__login :global(.link) {
-  display: flex;
   flex: 1 1 auto;
   align-items: center;
+  min-height: theme('size.16');
   justify-content: center;
-  @apply flex items-center justify-center flex-auto;
+
+  .link {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   @media screen(xl) {
-    padding-left: theme('spacing.4');
-    padding-right: theme('spacing.4');
+    .link {
+      justify-content: center;
+      padding-left: theme('spacing.4');
+      padding-right: theme('spacing.4');
+    }
   }
 }
 
@@ -179,14 +205,50 @@
 }
 
 .topline__lang {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #443c4f;
+  font-size: theme('fontSize.sm');
+
+  @media screen(xl) {
+    padding-left: theme('spacing.4');
+    padding-right: theme('spacing.4');
+  }
+}
+
+.topline__mobile {
+  flex: 1;
+  flex-direction: column;
+  max-height: 100vh;
+  max-height: 100dvh;
+
+  .topline__inner {
+    height: auto;
+    flex: 1 1 auto;
+  }
+
+  .topline__menu-item {
+    min-height: theme('size.16');
+  }
+}
+
+.topline__desktop {
+  flex: 1 1 auto;
 }
 
 .topline.is-closed {
   bottom: initial;
   min-height: initial;
 
-  .topline__inner {
-    display: none;
+  .topline__mobile {
+    .topline__inner {
+      display: none;
+    }
+  }
+
+  .topline__reg.mobile {
+    display: flex;
   }
 }

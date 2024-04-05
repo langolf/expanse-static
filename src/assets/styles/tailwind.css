@@ -3,5 +3,15 @@
 @tailwind utilities;
 
 body {
+  background: theme('colors.ex.dark.900');
   color: theme('colors.ex.neutral');
+}
+
+.inner {
+  width: 100%;
+  margin: auto;
+
+  @media screen(md) {
+    max-width: theme(size.inner);
+  }
 }
