@@ -1,0 +1,55 @@
+---
+import './updates.css';
+import Image from 'astro/components/Image.astro';
+import imageColdEffectSrc from './assets/cold-effect.png';
+import imageSpiritSrc from './assets/spirit.png';
+import imageTemplarSrc from './assets/templar.png';
+
+const list = [
+  { id: 'spirit', title: 'Дух', ctaText: 'Посмотреть умения', imgSrc: imageSpiritSrc },
+  { id: 'templar', title: 'Священный Храмовник', ctaText: 'Посмотреть умения', imgSrc: imageTemplarSrc },
+];
+---
+
+<section id="landing-updates" class="landing-updates">
+  <div class="landing-updates__bg">
+    <Image src={imageColdEffectSrc} alt="" />
+  </div>
+
+  <div class="landing-updates__inner inner">
+    <div class="landing-updates__topline">
+      <h1>Обновление <strong>Высшие эльфы</strong></h1>
+    </div>
+
+    <div class="landing-updates__header">
+      <h2>Новая раса</h2>
+      <h3>
+        Привносит свежесть в мир Адена, расширив возможности игроков и добавив захватывающий новый контент и механики
+      </h3>
+
+      <p>
+        Все игроки получат доступ к новой расе высших эльфов - Дух и Священный Храмовник, обладающей уникальными
+        способностями и талантами. Освойте их мощные навыки и погрузитесь в битвы с новыми силами.
+      </p>
+    </div>
+
+    <div class="new-race">
+      {
+        list.map(({ title, id, ctaText, imgSrc }) => (
+          <div class:list={['new-race__item', { [`${id}`]: id }]} id={id}>
+            <div class="new-race__media  aspect-[360/400]">
+              <Image src={imgSrc} alt="" />
+            </div>
+
+            <div class="new-race__cta">
+              <div class="new-race__title">{title}</div>
+              <button data-aw-modal type="button" class="new-race__button">
+                {ctaText}
+              </button>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

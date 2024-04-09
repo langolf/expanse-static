@@ -1,0 +1,39 @@
+---
+import './changes.css';
+import Image from 'astro/components/Image.astro';
+import imageEvaCard from './assets/eva-card.png';
+import imageShillenCard from './assets/shillen-card.png';
+import Button from '~/components/button/Button.astro';
+---
+
+<section id="landing-changes" class="landing-changes">
+  <div class="landing-changes__inner inner">
+    <div class="landing-changes__info">
+      <div class="landing-changes__header">
+        <h1>Изменение класса <strong>Храмовника Евы и Храмовника Шилен</strong></h1>
+      </div>
+
+      <div class="landing-changes__cta">
+        <h4>Эти классы получили новые умения для охоты, а также значительно улучшатся их уникальные роли</h4>
+        <p>
+          Храмовник Евы будет иметь умения с эффектом натиска и шока, способность поглощать урон союзников и повышать их
+          жизнеспособность, а также сможет массово притягивать противников и атаковать их по области. Храмовник Шилен
+          сможет снижать дальность врагов с помощью отрицательного эффекта, врываться в ближний бой с помощью умения
+          натиска, а также применять атаку по области и вызывать паралич.
+        </p>
+
+        <Button text="Умения Храмовников" />
+      </div>
+    </div>
+
+    <div class="landing-changes__cards">
+      {
+        [imageEvaCard, imageShillenCard].map((imgSrc) => (
+          <div class="card">
+            <Image src={imgSrc} alt="" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

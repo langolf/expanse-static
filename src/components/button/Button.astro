@@ -1,8 +1,23 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+const { text, ...rest } = Astro.props;
 ---
 
-<button>
-  <Icon name="caret-down" />
-  Hello world
+<button type="button" class="button" {...rest}>
+  <span class="button__text">{text}</span>
 </button>
+
+<style lang="postcss">
+  .button {
+    background: theme(colors.ex.neutral);
+    color: theme(colors.ex.dark.900);
+    text-transform: uppercase;
+    padding: theme(spacing.1) theme(spacing.3);
+    font-weight: 600;
+  }
+
+  .button:hover {
+    border: 2px solid theme(colors.ex.neutral)
+  }
+</style>

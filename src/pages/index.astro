@@ -5,9 +5,13 @@ import Button from '../components/button/Button.astro';
 import { Icon } from 'astro-icon/components';
 import Topline from '~/components/topline/Topline.astro';
 import Hero from '~/components/landing-sections/hero/Hero.astro';
+import Updates from '~/components/landing-sections/updates/Updates.astro';
+import Changes from '~/components/landing-sections/changes/Changes.astro';
 ---
 
 <Layout>
-  <Topline isClosed={false} />
-  <Hero />
+  <Topline isClosed={true} />
+  <!-- <Hero /> -->
+  <Updates />
+  <Changes />
 </Layout>

@@ -24,7 +24,7 @@ const { isClosed } = Astro.props;
   });
 </script>
 
-<header data-aw-topline class:list={['topline', { isClosed: isClosed }]}>
+<header data-aw-topline class:list={['topline', { ['is-closed']: isClosed }]}>
   <div class="topline__desktop hidden xl:block">
     <div class="topline__inner container mx-auto">
       <ToplineLogo />
