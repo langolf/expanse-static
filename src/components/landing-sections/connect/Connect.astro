@@ -1,0 +1,47 @@
+---
+import './connect.css';
+import Image from 'astro/components/Image.astro';
+import SvgConnectTitle from './assets/connect-title.svg?raw';
+import Button from '~/components/button/Button.astro';
+
+const connectList = [
+  { title: 'Актуальные обновления', text: 'Наша команда регулярно делает Вашу игру лучше!' },
+  {
+    title: 'Игроки в приоритете',
+    text: 'Наша задача обеспечить максимальный комфорт для наших игроков. Мы Вас слышим, слушаем и внимаем.',
+  },
+  {
+    title: 'Лучшая поддержка',
+    text: 'Оптимизировали все рабочие процессы таким образом, чтобы оказывать максимально быструю помощь по любому запросу',
+  },
+  {
+    title: 'Разумное сообщество',
+    text: 'Мы делаем качественный продукт, основываясь на обратной связи со своим сообществом.',
+  },
+];
+---
+
+<section id="landing-connect" class="landing-connect">
+  <div class="landing-connect__header">
+    <h1>Присоединяйся прямо сеичас</h1>
+
+    <Fragment set:html={SvgConnectTitle} />
+  </div>
+
+  <div class="landing-connect__inner inner">
+    <ul class="landing-connect__list">
+      {
+        connectList.map(({ title, text }) => (
+          <li>
+            <strong>{title}</strong>
+            <p>{text}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="landing-connect__cta">
+      <Button size="md" text="Hачать играть" />
+    </div>
+  </div>
+</section>

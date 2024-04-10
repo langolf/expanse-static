@@ -1,0 +1,66 @@
+---
+import './features.css';
+import Image from 'astro/components/Image.astro';
+import imageSword from '~/assets/images/sword.png';
+import imageSwordSplash from '~/assets/images/sword-splash.png';
+import imageSwordWithSplash from '~/assets/images/sword-with-splash.png';
+import imageFeaturesTitleSvgRu from './assets/features-ru.svg';
+import Button from '~/components/button/Button.astro';
+---
+
+<section id="landing-features" class="landing-features">
+  <div class="landing-features__bg hidden md:block">
+    <!-- <Image class="sword-splash" src={imageSwordSplash} alt="" /> -->
+    <Image class="sword" src={imageSwordWithSplash} alt="" />
+  </div>
+
+  <div class="landing-features__inner inner">
+    <div class="landing-features__header" aria-label="title">
+      <Image src={imageFeaturesTitleSvgRu} alt="Особенности" />
+    </div>
+
+    <ul class="landing-features__list">
+      <li class="f-chance bg-ex-dark-900">
+        Лимитированное выпадение L-монет при охоте на монстров, для всех членов группы:
+        <strong class="block mt-1 md:mt-2">шанс 80%</strong>
+      </li>
+
+      <li class="f-client bg-ex-purple">
+        <strong class="block mb-1 md:mb-2">один ПК — один клиент</strong>
+        *на одном компьютере можно запустить один клиент игры
+      </li>
+
+      <li class="f-rates">
+        <div class="bg-ex-dark-900">
+          <strong>x1</strong>
+          <span>Получение<br />Adena, Drop, Spoil</span>
+        </div>
+
+        <div class="bg-ex-firmcolor">
+          <strong>x1</strong>
+          <span>Получение<br />опыта и SP</span>
+        </div>
+      </li>
+
+      <li class="f-insure bg-ex-purple">
+        Наличие <strong>гарантированной модификации и синтеза</strong>
+      </li>
+
+      <li class="f-limit bg-ex-dark-900">
+        <strong>Лимитированный</strong> оффлайн фарм
+      </li>
+
+      <li class="f-rmt bg-ex-firmcolor">
+        <strong>Легализация RMT</strong> через биржу Expanse
+      </li>
+
+      <li class="f-world bg-ex-ice">
+        <strong>Насыщенный</strong> игровой <strong>мир</strong>
+      </li>
+    </ul>
+
+    <div class="landing-features__cta">
+      <Button size="md" text="Подробнее о сервере" />
+    </div>
+  </div>
+</section>

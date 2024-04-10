@@ -17,6 +17,7 @@ body {
 .inner {
   width: 100%;
   margin: auto;
+  position: relative;
 
   @media screen(md) {
     max-width: theme(size.inner);

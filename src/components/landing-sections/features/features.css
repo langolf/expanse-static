@@ -1,0 +1,159 @@
+:root {
+  --features-title-height: 86px;
+}
+
+.landing-features {
+  position: relative;
+}
+
+.landing-features__bg {
+  position: absolute;
+  top: var(--features-title-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 1089px;
+    height: 1089px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(39, 190, 238, 0.66) 0%, rgba(22, 109, 136, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+}
+
+.sword {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-360px, 80px);
+  max-width: initial;
+  width: 1380px;
+}
+
+.sword-splash {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.landing-features__inner {
+  z-index: 2;
+}
+
+.landing-features__header {
+  margin-bottom: theme(spacing.3);
+
+  @media screen(md) {
+    margin-bottom: theme(spacing.10);
+  }
+}
+
+.landing-features__list {
+  font-size: 1.2rem;
+  padding: 0 theme(spacing.2);
+  max-width: 100%;
+  overflow: hidden;
+
+  li {
+    font-weight: 400;
+    line-height: 1.3;
+    padding: theme(spacing.6) theme(spacing.7);
+
+    strong {
+      line-height: 1;
+      font-weight: 700;
+    }
+  }
+
+  li.f-rates {
+    margin: calc(-1 * theme(spacing.6)) calc(-1 * theme(spacing.7));
+
+    div {
+      display: flex;
+      align-items: center;
+      padding: theme(spacing.5) theme(spacing.7);
+
+      strong {
+        font-size: theme(size.11);
+        margin-right: theme(spacing.6);
+      }
+    }
+  }
+
+  li.f-chance,
+  li.f-client,
+  li.f-rates {
+    font-size: 0.95rem;
+
+    strong {
+      font-size: 1.45rem;
+    }
+  }
+
+  @media screen(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0;
+    max-width: initial;
+    overflow: initial;
+
+    li.f-chance {
+      max-width: 520px;
+
+      strong {
+        font-size: 1.9rem;
+      }
+    }
+
+    li.f-rates {
+      display: flex;
+    }
+
+    li.f-client {
+      strong {
+        font-size: 1.9rem;
+      }
+    }
+
+    li.f-limit {
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+    li.f-insure {
+      font-size: 1.9rem;
+      max-width: 620px;
+      line-height: 1;
+    }
+  }
+}
+
+.landing-features__cta {
+  margin-top: theme(spacing.2);
+  width: 100%;
+  display: flex;
+
+  .button {
+    width: 100%;
+    min-height: 4rem;
+    font-size: 1.1rem;
+  }
+
+  @media screen(md) {
+    margin-top: theme(spacing.16);
+    justify-content: flex-end;
+
+    .button {
+      font-size: 1.4rem;
+      width: 496px;
+      height: 74px;
+    }
+  }
+}
