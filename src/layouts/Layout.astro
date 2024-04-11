@@ -7,12 +7,16 @@ import BasicScripts from '../components/common/BasicScripts.astro';
 ---
 
 <!doctype html>
-<html lang="ru" class="2xl:text-[20px]">
+<!-- todo: should add class 2xl:text-[20px] -->
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <CustomStyles />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <!-- todo: should add class tracking-tight for letter spacing -->
+  <body class="antialiased text-default bg-page">
     <slot />
 
     <BasicScripts />

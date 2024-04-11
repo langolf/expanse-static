@@ -23,3 +23,7 @@ body {
     max-width: theme(size.inner);
   }
 }
+
+@define-mixin cl $size {
+  font-size: clamp($size, calc($size + (1.25 - 1.125) * ((100vw - 20rem) / (96 - 20))), $size);
+}

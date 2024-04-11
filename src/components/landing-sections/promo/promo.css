@@ -1,0 +1,9 @@
+.landing-promo__placeholder {
+  img {
+    mask: url(#mask), linear-gradient(red 0 0);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-composite: exclude;
+    border: 0;
+  }
+}

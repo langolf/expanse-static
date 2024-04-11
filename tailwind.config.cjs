@@ -24,6 +24,9 @@ module.exports = {
       fontSize: {
         xsm: '0.75rem',
       },
+      fontFamily: {
+        sans: ['Unbounded Variable', 'sans-serif'],
+      },
       colors: {
         ex: exColors,
         ui: {
@@ -33,10 +36,10 @@ module.exports = {
           base: exColors.neutral,
         },
       },
-      fontFamily: {
-        sans: ['Unbounded', 'sans-serif'],
-      },
     },
+  },
+  experimental: {
+    optimizeUniversalDefaults: true,
   },
   plugins: [],
 };
