@@ -1,0 +1,215 @@
+.landing-news {
+  position: relative;
+  z-index: 4;
+  border-top: 30px;
+  border-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxOTIwIDQ4Ij4KICA8cGF0aCBmaWxsPSIjRUUyNzU5IiBkPSJtMTg5MiA1IDI4IDExdjMySDBWMjdsMTctNyAyNS00IDkzIDExaDc1bDU1LTE2IDU3IDkgMjE0LTQgMTUtMTEgMjYgMTEgMTUyIDQgNDYgNyA4LTI3IDEzIDIwIDQyLTkgNTMtNiAxNDEgMTFoNzdsNTUtNSA1MiAxNiAzNi0yNyAxNDMgMTZoMTA3bDc0LTUgMTAtNiAxMjEgMTV2LTlsMTg1LTZaIi8+Cjwvc3ZnPgo=')
+    30 0 8 0 repeat repeat;
+  border-style: solid;
+}
+
+.landing-news__body {
+  background-color: theme(colors.ex.firmcolor);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 708 184'%3E%3Cpath fill='%23000' d='M309 5c-3 2-5-4-2-5 4-1 5 4 2 5Z'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M657 170c24 4 41 9 51 14H599a1401 1401 0 0 0-58-2h-1l-4 1 6 1h-18a943 943 0 0 1-5 0H4c-2-2-4-4-4-7l4-8c2-3 5-3 8-4l4-2c8-3 17-5 25-4h15l-1-1 1-1 1-1 1 1v2l4 1c4 0 8 2 12 4l7 3c4 2 9 3 14 3l12-2 7-1h1l4-2 4-1 4 1 5 1c16-1 37-1 63 1l6-12 5-11c2-2 2-5 2-8 0-4 1-7 4-10a19 19 0 0 0 2-2l3-3-2-38-1-16c0-10 0-15 5-14 4 1 4 6 4 11v56l5-1c1-23-1-45-2-61V38c0-12 1-18 8-17s6 8 6 14l-1 4-1 21c0 15 0 36-3 58 9 4 18 8 23 15l4 6 4 6c4 3 9 5 14 4 2-1 4 0 5 1l5 1c3-4 6-6 10-8l4-3c5-3 12-1 16 2 3 2 7 4 11 4h13c2 0 3 2 4 3 1 2 2 3 4 3l-1-4h9l-1 3a307 307 0 0 0-1 4c4 3 10-4 5-6h17l4-1 6-1h6c3 0 7 0 11 2l6 1 4 1 13 2 12 2 8 3a65 65 0 0 0 13 6l4 2h2l6 1 24 6 26-4c-2-4 0-9 4-10l6 3 1 5 34-4h1c27-2 58-4 86 7Zm-315 5-3 1-2 4h3a1589 1589 0 0 1 29 1l36-1-14-10-13 2-31 3h-5Zm-6 5Zm98-1h-4 4Zm57-3 1 1h2l-2-1h-1Zm-326 5c-6 0-11-3-15-6h36-4l-13 5-4 1Zm209-20h-5l-7 1-4-1c-2 0-5-1-7 1l-8 8 16-2 26-2c-3-3-7-5-11-6v1Zm148 13 6-1-2-2-7 1-15 2 4 1 14-1Zm14-5v4a662 662 0 0 1 104-4c-35-9-71-5-104 0Z' clip-rule='evenodd'/%3E%3Cpath fill='%23000' d='M578 98c1-2 5 0 3 2-1 1-5-1-3-2Zm-17 31c2-2 5 1 3 3-1 2-4-1-3-3Zm-197-16v-1l2-1 1 1v1l-1 1-2-1Zm-7-84c2-2 6 1 4 3-2 3-6-1-4-3Zm-67 93 1 1v4l-6 5-2 1c-3 0-7-1-10-3l-1-6-1-1a30 30 0 0 0-9-2l-5-1c-2-1-2-3-1-5v-1l7-1h3l5-2c4-1 7-2 10-1 5 1 10 2 12 7l-2 5h-1Zm-19-43c3 3 8 6 13 4 3-3 6-8 3-11-2-5-8-6-13-4-3 3-4 7-3 11Zm-91 48-6-2c0 4 1 8 4 10l1-1c1-2 3-5 1-7ZM119 11c-3 1-2-5 0-5 4-1 3 4 0 5ZM93 56h1c1-4 2-9-1-14l4-7c3-3 5-7 5-12l-5-13c-3-3-8-5-12-6h-1c-4 1-8 2-10 5-4 5-9 10-8 17s7 13 15 13h9c3 5 4 11 2 16v1h1Z'/%3E%3C/svg%3E");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 45%;
+  padding-bottom: 1.4rem;
+
+  @media screen(md) {
+    padding-bottom: 6rem;
+  }
+}
+
+.landing-news__inner {
+  position: relative;
+}
+
+.landing-news__header {
+  background: theme(colors.ex.firmcolor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0 0.7rem;
+  margin-bottom: 1.4rem;
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+  }
+
+  @media screen(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.8rem;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 3.2rem;
+
+    h1 {
+      font-size: 2.75rem;
+      text-align: left;
+    }
+  }
+}
+
+.landing-news__categories-list {
+  width: 100%;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  display: flex;
+  margin-right: -0.7rem;
+  gap: 0.5rem;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex: 1 0 auto;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' fill='%23100E13'%3E%3C/rect%3E%3Cpath d='M28.0671 25.0178H28.0777L26.773 23.7065L28.3318 22.3885L29.9054 21.0526L29.9668 20.901V15.2877L29.6936 15.8073L29.0265 17.0986L28.8147 17.5067L28.6135 17.5379L27.6477 17.6784L26.2203 17.888L23.8334 18.2382L32 10.0379L23.0349 13.9429H22.9206L20.1228 17.0094L19.9894 17.161L19.8454 17.0071L17.0815 13.9764L17.0498 13.963L17.0328 13.9451H17.0095L8 10L11.9287 13.9451H11.9223L13.0258 15.0558L14.3389 14.2484L13.9979 16.0326L16.2153 18.2583L13.6463 17.8814L13.3074 19.6566L12.8267 18.4813L12.0494 20.475L11.7275 21.3046V17.6026L11.4437 17.5624L11.1239 17.5156L11.0371 17.3439L9.98023 15.31V20.9166L10.0395 21.0593L13.0702 23.6307L13.1846 23.7266L13.1232 23.789L11.7741 25.1427L10.9778 25.9411L8.00212 28.9318L12.0621 27.1655H12.0642L15.7303 25.3903L14.5337 28.0486L19.9725 30L25.6971 27.946L24.7017 25.3903L27.9252 27.1878L32 28.9719L28.4864 25.4438L28.0671 25.0268V25.0178ZM22.2683 23.227C22.0692 23.3497 21.8743 23.4768 21.6795 23.6039C21.6774 23.6084 21.6689 23.6106 21.6668 23.6151C21.6223 23.6463 21.5757 23.6775 21.527 23.7043L19.9725 24.2908L18.6551 23.7935C18.5598 23.731 18.4666 23.6708 18.3692 23.6084C18.3565 23.5972 18.3396 23.5883 18.3226 23.5772C18.1087 23.4367 17.8927 23.3006 17.6788 23.1624V22.1655L19.1613 22.6583L19.2164 22.6784L19.9703 22.9282L20.79 22.6583L20.809 22.6516L22.2661 22.1655V23.227H22.2683Z' fill='%23F9F3DE'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  &::after {
+    display: none;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  @media screen(md) {
+    margin-right: initial;
+    overflow-y: initial;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.landing-news__articles {
+  --news-article-accent-color: theme(colors.ex.firmcolor);
+
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding-left: 0.7rem;
+
+  &.type-promos {
+    --news-article-accent-color: theme(colors.ex.green);
+  }
+
+  &.type-news {
+    --news-article-accent-color: theme(colors.ex.firmcolor);
+  }
+
+  &.type-updates {
+    --news-article-accent-color: theme(colors.ex.gold);
+  }
+
+  &.type-events {
+    --news-article-accent-color: theme(colors.ex.ice);
+  }
+
+  @media screen(md) {
+    gap: 2.4rem;
+  }
+}
+
+.news-article {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(278px, 80%, 408px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  &:last-child {
+    margin-right: 0.7rem;
+  }
+}
+
+.news-article__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 278/126;
+}
+
+.news-article__date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.7rem;
+  background: theme(colors.ex.firmcolor);
+}
+
+.news-article__category {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.7rem;
+  background: var(--news-article-accent-color);
+  text-transform: uppercase;
+
+  > span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: -54px;
+    top: -47px;
+    pointer-events: none;
+    width: 358px;
+    height: 166px;
+    background-color: var(--news-article-accent-color);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 358 166'%3E%3Cpath fill='%23000' d='M349.7 89.5c0 2.6 1.2 4.1 3.3 4.6 1.7.6 3.6-.8 4.1-2.2l.3-2.4-2-2.4c-1.2-.3-2.4-.7-3.6 0a4.5 4.5 0 0 0-2.1 2.4ZM58.6 139.2l-7.2-5-.5-.8 4.3 2.3c5.3 2.8 11 5.7 17 7.6l25 6-8.4-2.7-15.4-4.3-7.9-3.6v-.2c4.2.9 8.4 2.4 12.8 4 10.4 3.7 21.4 7.7 32.8 4.1l.3-1c-3.3-.7-7.7-1-11.6-1.1 2.5-1 5.7-.7 8.8-.4 2.3.2 4.6.5 6.6.1 4.3-.6 9-.4 13.7-.2 4.8.2 9.6.4 14.1-.2l17.6-1.7v-.7c-13.3.6-27.2.2-39.4-1.5l-.2-.5 16-6.7a160.5 160.5 0 0 0 22.1-12.2c1.4-.8 2.8-1.4 4.2-2 2.3-1 4.6-2 6.4-3.8v-1l-2.2-.9c-1.2-.2-1.9.4-2.6 1-.7.5-1.5 1.1-2.7 1l-.2-2a53.8 53.8 0 0 1 31-9.6v-.2l-11.8-.3-.2-.2c-.3-.4-.4-.5-.5-1.5 3.4-3 7.8-4.7 12.5-6.3l4.3-1.6c11.1-4.3 23.2-6.3 37-8.6l1.6-.3c5.5-.9 13.4-.3 18.3.5l9.1 1.5c12.8 2 24.4 3.8 36.2 6.7l3.8 1c9 2.2 20 5 30.3 3.3l4-.4c3.7-.2 7.3-.4 8.7-2.7-20.7 3.7-39-1-56.1-6l-32.4-7.2c-6-1.2-21-2.6-27.6-1.5a43 43 0 0 1-16.8-.2h-.5v-.5l7.9-1.7h.5l.2-.4c-7.5 0-12.5 2-17.7 4a62.9 62.9 0 0 1-9 3.2l-32 6.7-19.3 1.4c-4.7.8-11.5.6-16-.2-4.4-.8-8.2-2.2-11.8-3.4l-3.4-1.2-.5-1.4.5-.7c2.2-.7 4.7-.5 7.3-.3 2.4.2 4.8.4 7.4 0 10.4-1.7 18-5.6 22.8-13-2.1 1-3.8 2.6-5.4 4.2-2 2-4 3.8-6.9 5-15.7 6.4-37.2-4.4-46.8-10.8-2.3-1.6-15-10.4-13-14.7 1.1-2.3 8.7-.9 10.9-.2 5.8 1.7 12 4 16.8 7.2l7.2 5.5.4.5h.3c-1.5-4.7-19.6-19.3-25-21.4-3.2-1.2-5.7-1.4-7.8-1.6-3.5-.4-6.2-.6-10-4.6h-.4c4-1.5 8.6 1 11.5 2.5l1.2.6 3 1.5c6.9 3.6 15 7.7 23.4 8.1-1.4-1.5-4.8-2.6-8.2-3.8-2.9-1-5.8-2-7.4-3.1a12.1 12.1 0 0 1-.3-.2c.2 0 .4-.2.5-.6l-11.2-6-.3-.4a70.4 70.4 0 0 1 15.5 7 59.2 59.2 0 0 0 23.2 8.8V55l-4.5-1.4c-4-1.2-8-2.4-11.6-4-3.8-1.6-7.4-3.6-11-5.6a65 65 0 0 0-35.1-11c9.2-2.1 17-1 25.3.1 4.7.7 9.6 1.4 15 1.6v-.3l-16.5-2.6-2.8-.7c-3.9-1-8.2-2.2-12.8-1.5-2.7.4-4.9 1-7 1.7-3.3 1-6.3 1.9-10.6 2l-.2-.6c11.2-9.4 32.5-3.6 50.4 1.2a114 114 0 0 0 21.8 4.6l-26.8-8-24.3-6.9C43 17.5 22.3 39 15 56L7.2 75.6a13 13 0 0 1-4 4.1c-1.1 1-2.3 1.9-3.2 3.1v6.5c6.6 6.7 11 15.6 15.4 24.4 3.3 6.6 6.5 13.3 10.8 19a67 67 0 0 0 30 21.4l.4-.5-5.7-3.4c-4.7-3.5-17-15.3-17.3-22.3l.5-.2a14 14 0 0 1 3.5 3.8l1.3 1.7c3.8 4.8 11.4 11 18.2 12.5a9.4 9.4 0 0 0-3.7-2.5l-.7-.4a26.6 26.6 0 0 1-1.3-.7c-5-3-10-7-13-12l6.3 5a88 88 0 0 0 21 14c7.4 3 16.2 5 24.5 6.9l7.7.7 15.6 3.1-32.4-9c-8-2.7-15.8-7.3-22.5-11.6Zm256.3-20.9c-4.1 1-8.3-2.6-7.5-6.5 1.6-7.3 9.1-4 11.6.3l-.5 3.6-3.6 2.6Z'/%3E%3Cpath fill='%23000' d='M303 88.1c.2 0 .3-.2.4-.3l.2-1-.7-.6h-.7c-.6 1-.6 1.6.7 2.1l.2-.2Zm-25.3-15.6V72l-.3-.7.8-.5h.2l1 1-.5 1-1.2-.3Zm-14 0h-.1c-.3.3-.4.3-.6 1.2l.3.5h1.2l.2-.2.4-.3V73l.1-.2-1.2-.5-.3.3Zm-4.9 8.2-.6-.3c.5-1 .6-1.2 1.5-1.7l.7.7-.7 1.2h-.5c-.2 0-.3.1-.4 0ZM219.1 97a8.4 8.4 0 0 0-5.7 0l-1.2 1.2c-.5 1-.1 2.4.1 3.4l.1.2a77.3 77.3 0 0 0 25.2 1l1-.8c-2.3-1.7-6.2-1.8-10-1.9-3.2 0-6.3 0-8.5-1h-.5l.2-1.7-.7-.4Zm8.7-25.7c-1.8 0-2.7-.2-3.4-1.2l.5-.7.7-.3.7.2c.8.2 1.6.4 2.2.8a11.9 11.9 0 0 0-.3.6l-.3.2-.1.1v.3Zm-2.2 86.9.2-2.2-2.4-2.2c-1-.4-1.7 0-2.5.3h-.2l-.1.1-.3.1-1 2.4 1.7 2.7 1.5.4c1.8 0 2.5-.4 3.1-1.6Zm-7.9-134.4c-1.5 0-1.8-.2-2.4-1v-.3h.1v-.1l.1-.1a1.7 1.7 0 0 0 .3-.2h1.9l.2.5-.2 1.2Zm-18 43.9-.3 1.2.8.5 5.7.2.7-2a16 16 0 0 0-6.4-.6l-.5.7Zm-1 26.1v-.2h1.2l2.2.7-.5 1-2.6-.7-.3-.8Zm1.3 19.5-3.4-.5-.5.5v1l1.2.9h2.2a6.4 6.4 0 0 0 .6-.4v-.3l.2-.2.1-.3-.5-.7Zm-6-9.9.2-.4c1.7-.3 3.8-.3 5.2.2-.7 1.1-4 .8-5.5.5v-.3Zm-2-79.2v1.2c1 1.3 3 3.6 5.8 2.4l.7-.2.2-1.4c-1.5-1.8-3.8-3.7-6.7-2ZM172.3 112l.7-.9c3.4-1 7.4-1.5 11.6-1.9-.7.7-8.5 2.3-11.4 3h-.5l-.4.1v-.2Zm9.4-27.5v.2l.5.3.4-.4c.5-.4.7-.7 1-1.6l-.5-.2-1 1-.4.7Zm-8.9 69.1c2.4 0 5 0 6.7.5l.5.7-.7 1.7h-6l-1-.5-.2-1.4.7-1Zm3.8-74.9c-3.9-1.6-13 0-14.8 2.4l.4 1c3.3.5 7-.5 10.3-1.5l3.7-1 .4-.9Zm-.4 28.3v.8l-1 .7 1-1.5Zm-2-34v-1.2l-1.6-1.2-1 .2a2.4 2.4 0 0 1-.3.2l-.2.5v.3l.2.1.2.1c.7.6 1.2 1 2.7 1Zm-6.9-68.2.2-.2 1.5.4-.5 1-1.2-.5v-.7ZM164 48.5l.2.5c1.4 1.1 3.8 1.5 4-1.2-1.4-1.1-2.2-1.5-4-.5l-.3 1.2Zm.6 82.1 2 .2-5 .5v-.7h3Zm-14.8-67.5.2.3c.9 1 1.5 1.7 2.9 2.4 3 0 4.2-1.4 4.5-3.9l-.1-.3c-1-1.5-1.4-2.2-3.2-3-3.2-.1-4.5 1.3-4.3 4.5Zm-4.8 92.2v.7l-1 .5v-1.2l.2-.5h.3l.5.5ZM128.2 90c5.3 2.2 15.1-6.4 16.5-9.6l-3.2 2.9c-3.5 3.2-7.1 6.6-13.3 6.7Zm-1.5-19 .7.8a5.7 5.7 0 0 0-.4.5h-.3l-.5.2-.5-.1c-3-.7-7.9-1.8-5.7-5.2l.7-.2c2.8.3 4.5 2.2 6 4Zm-1.4 83.3-.7-.2-.5.2-.2.3c-.2.4-.2.5 0 1.2.4.8.6.8 1.9 1h.2l.5-1.8-1.2-.7Zm.5-130.8-.8.3-.7-.5.5-1.5 1 .5v1.2Zm-13 18.3c.6.3.8.4 2 .4l.2-1.2-1.2-.4-1 .4v.8Zm1.9 105.3-3.1.3.5-.3 2.6-.5v.5ZM113.5 77l.6-.4.1-1-1.9-.2v.1c-.3.6-.4.7-.2 1.5h1.4Zm-2.9 87-.2 1.1-2.4.7h-.2c-2-.6-3.3-1-4.6-2.4l.7-1.6h.5c2.4-.6 4.8 1 6.2 2.1ZM109.2.2l-.5-.2-.5.2.3.8.5.7.4-1-.2-.5Zm-30.5 56v-.3a18 18 0 0 1 19.7 11.3l2.4 7c-.4 0-1.5-2.3-2.9-5.1a36 36 0 0 0-4.8-8.4c-2.5-2-5.8-3.8-9.3-4.5h-5Zm-3.1-13.5 2 1 .4-.7-2.4-.5v.2Zm0-.5-.7.3v-.3h.7Zm-6.7 111.4c-3.7-1.2-6.9-3-10-4.8-2.3-1.3-4.6-2.6-7-3.6 1.6 2.2 13.4 9.7 17 8.4ZM34.4 14.7l2 1.4c-.4 1.6-1.8 2.3-3.8 2.4-1.4-.8-3-1.5-4.5-2.2-2.5-1-5-2.1-7-3.6l.5-2.1c5.2-1 9.4 1.8 12.8 4.1ZM18 35h-.7v.5l.2.3.3.3.2.1.5.5.5-1-1-.7Zm-2.4 8.4h.5l.7.8-.7 1-.7-.6.2-1.2Z'/%3E%3C/svg%3E");
+  }
+}
+
+.news-article__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-article__title {
+  font-size: 1rem;
+  font-weight: 500;
+
+  @media screen(md) {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+}

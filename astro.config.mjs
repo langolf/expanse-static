@@ -19,7 +19,7 @@ export default defineConfig({
   integrations: [
     react(),
     icon({
-      svgoOptions: false
+      svgoOptions: false,
     }),
     tailwind({
       applyBaseStyles: false,

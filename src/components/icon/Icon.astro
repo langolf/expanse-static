@@ -1,10 +1,16 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon as IconAstro } from 'astro-icon/components';
 
 const { name, size, class: className, ...rest } = Astro.props;
 ---
 
-<Icon class:list={['icon', { [`icon--size-${size}`]: size }, className]} {name} {...rest} />
+<IconAstro
+  width={false}
+  height={false}
+  class:list={['icon', { [`icon--size-${size}`]: size }, className]}
+  {name}
+  {...rest}
+/>
 
 <style lang="postcss">
   :root {

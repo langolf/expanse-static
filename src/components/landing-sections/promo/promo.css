@@ -1,9 +1,153 @@
+.landing-promo {
+  position: relative;
+  /* height of border */
+  margin-top: -40px;
+  margin-bottom: -20px;
+  /* it should be lower than Connect and News sections  */
+  z-index: 3;
+
+  @media screen(md) {
+    margin-top: -89px;
+  }
+}
+
 .landing-promo__placeholder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+
   img {
-    mask: url(#mask), linear-gradient(red 0 0);
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-composite: exclude;
-    border: 0;
+  }
+
+  @media screen(md) {
+    img {
+      mask: url(#promo-top-mask), linear-gradient(red 0 0);
+    }
+  }
+}
+
+.landing-promo__inner {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.9rem;
+
+  @media screen(md) {
+    padding: 15rem 0;
+    flex-direction: row;
+    gap: 3.3rem;
+    justify-content: center;
+  }
+}
+
+.landing-promo__control {
+  position: relative;
+  width: 6.25rem;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen(md) {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.landing-promo__play-bg {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    flex: 1;
+  }
+}
+
+.landing-promo__play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.1rem;
+
+  @media screen(md) {
+    width: 2rem;
+    height: initial;
+  }
+}
+
+.landing-promo__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-promo__title {
+  display: block;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.4rem;
+  max-width: 70%;
+  text-align: center;
+  position: relative;
+
+  > span {
+    position: relative;
+    z-index: 2;
+  }
+
+  > svg {
+    z-index: 1;
+    position: absolute;
+  }
+
+  @media screen(md) {
+    text-align: left;
+    font-size: 2.75rem;
+    max-width: initial;
+    flex: 0 1 auto;
+
+    > span {
+      display: block;
+      /* for proper hypernation */
+      max-width: 420px;
+    }
+  }
+}
+
+svg#svg-promo-title-align-center {
+  display: block;
+  width: 77%;
+  left: 50%;
+  top: calc(50% + 10px);
+  transform: translate(-50%, -50%);
+
+  @media screen(md) {
+    display: none;
+  }
+}
+
+svg#svg-promo-title-align-left {
+  display: none;
+
+  @media screen(md) {
+    display: block;
+    width: 105%;
+    left: 0px;
+    top: calc(50% + 15px);
+    transform: translate(-10px, -50%);
   }
 }

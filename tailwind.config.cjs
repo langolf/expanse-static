@@ -11,6 +11,7 @@ const exColors = {
   grey: '#6A6373',
   ice: '#3581DB',
   neutral: '#F9F3DE',
+  green: '#26B478',
 };
 
 /** @type {import('tailwindcss').Config} */

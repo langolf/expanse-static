@@ -32,16 +32,20 @@ const articles = [
     image: '/src/assets/images/news/4.jpg',
   },
 ];
+
+const { type, ...rest } = Astro.props;
 ---
 
-<article class="landing-news__articles">
+<article class:list={['landing-news__articles', 'js-news-articles', { [`type-${type}`]: type }]} {...rest}>
   {
     articles.map(({ date, category, title, link, image }) => (
       <section class="news-article">
         <div class="news-article__media">
-          <Image src={images[`${image}`]()} alt="" />
+          <Image class="news-article__image" src={images[`${image}`]()} alt="" />
           <div class="news-article__date">{date}</div>
-          <div class="news-article__category">{category}</div>
+          <div class="news-article__category">
+            <span class="news-article__category-text">{category}</span>
+          </div>
         </div>
 
         <h2 class="news-article__title">{title}</h2>

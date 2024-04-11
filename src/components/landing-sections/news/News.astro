@@ -3,6 +3,7 @@ import './news.css';
 import Image from 'astro/components/Image.astro';
 import imageVideoPlaceholder from '~/assets/images/video-placeholder.jpg';
 import NewsList from './NewsList.astro';
+import Icon from '~/components/icon/Icon.astro';
 
 const categoriesList = [
   { title: 'Новости', id: 'news' },
@@ -13,15 +14,23 @@ const categoriesList = [
 ---
 
 <section class="landing-news" id="landing-news">
-  <div class="landing-news__inner inner">
-    <div class="landing-news__header">
-      <h1>Актуальное</h1>
+  <div class="landing-news__body">
+    <div class="landing-news__inner inner">
+      <div class="landing-news__header">
+        <h1>Актуальное</h1>
 
-      <ul class="landing-news__categories-list">
-        {categoriesList.map(({ title, id }) => <li data-ex-id>{title}</li>)}
-      </ul>
+        <ul class="landing-news__categories-list">
+          {
+            categoriesList.map(({ title, id }) => (
+              <li data-ex-id id={id}>
+                {title}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <NewsList type="promos" />
     </div>
-
-    <NewsList />
   </div>
 </section>
