@@ -1,0 +1,38 @@
+---
+import './messengers.css';
+import Icon from '../icon/Icon.astro';
+
+const messengerList = [
+  {
+    title: 'Telegram',
+    id: 'telegram',
+    text: 'Вы можете обратиться за помощью в нашем телеграм канале',
+    url: '/telegram',
+  },
+  {
+    title: 'Discord',
+    id: 'discord',
+    text: 'Мы с радостью готовы оказать вам поддержку в нашем дискорд сервере',
+    url: '/discord',
+  },
+];
+---
+
+<div class="messengers">
+  {
+    messengerList.map(({ title, id, text, url }) => (
+      <a href={url} class:list={['messenger', id]}>
+        <div class="messenger__header">
+          <div class="messenger__logo">
+            <Icon name={`${id}`} />
+          </div>
+
+          <div class="messenger__title">{title}</div>
+        </div>
+
+        <p class="messenger__text">{text}</p>
+        <Icon class="messenger__icon-link" name="forward" size="sm" />
+      </a>
+    ))
+  }
+</div>

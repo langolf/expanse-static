@@ -2,7 +2,7 @@
 import './hero.css';
 import Image from 'astro/components/Image.astro';
 import imageSkullSrc from '~/assets/images/skull-fire.png';
-import imageLogoSrc from './assets/symbol-vertical.svg';
+import logoSrc from '~/assets/images/symbol-vertical.svg';
 import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
 const { rest } = Astro.props;
@@ -15,7 +15,7 @@ const { rest } = Astro.props;
 
   <div class="hero__inner inner">
     <div class="hero__logo">
-      <Image src={imageLogoSrc} alt="logo" />
+      <Image src={logoSrc} alt="logo" />
     </div>
 
     <div class="hero__info">

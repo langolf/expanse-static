@@ -1,0 +1,82 @@
+---
+import './footer.css';
+import { Image } from 'astro:assets';
+import Icon from '~/components/icon/Icon.astro';
+import Messengers from '~/components/messengers/Messengers.astro';
+import logoSrc from '~/assets/images/logo-expanse.svg';
+import lastSamuraiLogoSrc from '~/assets/images/last-samurai-logo.png';
+
+const paymentLogos = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/payment-logos/*.{jpeg,jpg,png,svg}');
+
+const footerNav = [
+  { text: 'О сервере', href: '/' },
+  { text: 'Новости', href: '/' },
+  { text: 'База знаний', href: '/' },
+  { text: 'Сообщество', href: '/' },
+  { text: 'Поддержка', href: '/' },
+  { text: 'Пожертвования', href: '/' },
+];
+---
+
+<footer class="footer">
+  <div class="footer__inner inner">
+    <div class="footer-topline">
+      <h5 class="footer-topline__title">
+        Мы рады пригласить Вас стать частью нашего уникального и дружелюбного сообщества
+      </h5>
+      <p class="footer-topline__text">
+        Если у Вас есть вопросы, предложения, или Вы просто хотите общаться на интересующие Вас темы, мы всегда открыты
+        и рады новым участникам. <br /><br />
+        Подпишитесь, чтобы не пропустить ни одного важного обновления!
+      </p>
+    </div>
+
+    <div class="footer-extra">
+      <div class="footer-extra__left">
+        <div class="footer-extra__messengers">
+          <Messengers />
+        </div>
+
+        <div class="footer-extra__misc">
+          <div class="footer-extra__logo">
+            <Image class="logo-expanse" src={logoSrc} alt="logo" />
+            <span>by</span>
+            <Image class="logo-samurai" src={lastSamuraiLogoSrc} alt="" />
+          </div>
+
+          <nav class="footer-extra__nav">
+            <ul>
+              {
+                footerNav.map(({ text, href }) => (
+                  <li>
+                    <a {href}>{text}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+
+          <div class="footer-extra__terms">
+            <div class="footer-extra__providers">
+              {
+                ['mastercard', 'visa', 'paypal', 'g2a'].map((id) => (
+                  <Image src={paymentLogos[`/src/assets/images/payment-logos/${id}.svg`]()} alt="" />
+                ))
+              }
+            </div>
+            <a href="/terms">Правила и условия</a>
+            <a href="/privacy">Политика конфиденциальности</a>
+            <p>
+              © 2019-2023 Innadril SL. All rights reserved.<br />
+              All trademarks are the property of their respective owners.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-extra__right">
+        <!-- discord widget -->
+      </div>
+    </div>
+  </div>
+</footer>

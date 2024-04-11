@@ -1,0 +1,66 @@
+.messengers {
+  display: flex;
+  flex-direction: column;
+
+  @media screen(md) {
+    flex-direction: row;
+  }
+}
+
+.messenger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.messenger.telegram {
+  --accent-color: #3eccf9;
+
+  background: radial-gradient(99.91% 215.06% at 0% 0.3%, rgba(62, 204, 249, 0.3) 0%, rgba(62, 204, 249, 0) 100%);
+}
+
+.messenger.discord {
+  --accent-color: #5865f2;
+
+  background: radial-gradient(100.19% 215.66% at -0.09% 0.3%, rgba(88, 101, 242, 0.3) 0%, rgba(88, 101, 242, 0) 100%);
+}
+
+.messenger__header {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.messenger__logo {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  color: var(--accent-color);
+}
+
+.messenger__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex: 1 1 auto;
+}
+
+.messenger__text {
+  display: none;
+
+  @media screen(md) {
+    display: block;
+  }
+}
+
+.messenger__icon-link {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 1 auto;
+  color: var(--accent-color) !important;
+}

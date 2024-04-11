@@ -11,6 +11,7 @@ const exColors = {
   grey: '#6A6373',
   ice: '#3581DB',
   neutral: '#F9F3DE',
+  neutral2: '#F1EEE4',
   green: '#26B478',
 };
 
