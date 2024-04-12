@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Icon from '~/components/icon/Icon.astro';
 import Messengers from '~/components/messengers/Messengers.astro';
 import logoSrc from '~/assets/images/logo-expanse.svg';
+import discordImage from '/src/assets/images/discord-widget.png';
 import lastSamuraiLogoSrc from '~/assets/images/last-samurai-logo.png';
 
 const paymentLogos = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/payment-logos/*.{jpeg,jpg,png,svg}');
@@ -22,7 +23,7 @@ const footerNav = [
   <div class="footer__inner inner">
     <div class="footer-topline">
       <h5 class="footer-topline__title">
-        Мы рады пригласить Вас стать частью нашего уникального и дружелюбного сообщества
+        Мы рады пригласить Вас стать частью нашего уникального и&nbsp;дружелюбного сообщества
       </h5>
       <p class="footer-topline__text">
         Если у Вас есть вопросы, предложения, или Вы просто хотите общаться на интересующие Вас темы, мы всегда открыты
@@ -44,7 +45,7 @@ const footerNav = [
             <Image class="logo-samurai" src={lastSamuraiLogoSrc} alt="" />
           </div>
 
-          <nav class="footer-extra__nav">
+          <div class="footer-extra__nav">
             <ul>
               {
                 footerNav.map(({ text, href }) => (
@@ -54,7 +55,7 @@ const footerNav = [
                 ))
               }
             </ul>
-          </nav>
+          </div>
 
           <div class="footer-extra__terms">
             <div class="footer-extra__providers">
@@ -64,18 +65,25 @@ const footerNav = [
                 ))
               }
             </div>
-            <a href="/terms">Правила и условия</a>
-            <a href="/privacy">Политика конфиденциальности</a>
-            <p>
-              © 2019-2023 Innadril SL. All rights reserved.<br />
-              All trademarks are the property of their respective owners.
-            </p>
+
+            <ul>
+              <li><a href="/terms">Правила и условия</a></li>
+              <li><a href="/privacy">Политика конфиденциальности</a></li>
+              <li>
+                <p>
+                  © 2019-2023 Innadril SL. All rights reserved.<br />
+                  All trademarks are the property of their respective owners.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div class="footer-extra__right">
-        <!-- discord widget -->
+        <div class="discord-widget">
+          <Image class="w-full" src={discordImage} alt="" />
+        </div>
       </div>
     </div>
   </div>

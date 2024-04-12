@@ -4,6 +4,11 @@
 
   @media screen(md) {
     flex-direction: row;
+    gap: 4px;
+
+    > * {
+      flex: 1 0 50%;
+    }
   }
 }
 
@@ -13,18 +18,39 @@
   align-items: center;
   padding: 1rem;
   gap: 1rem;
+
+  @media screen(md) {
+    flex-direction: column;
+    align-items: initial;
+    padding: 1rem 1.4rem;
+    gap: 0.5rem;
+  }
 }
 
 .messenger.telegram {
   --accent-color: #3eccf9;
 
   background: radial-gradient(99.91% 215.06% at 0% 0.3%, rgba(62, 204, 249, 0.3) 0%, rgba(62, 204, 249, 0) 100%);
+
+  @media screen(md) {
+    border-radius: 1.4rem 0 0 1.4rem;
+    background: radial-gradient(99.91% 215.06% at 0% 0.3%, rgba(62, 204, 249, 0.3) 0%, rgba(62, 204, 249, 0.138) 100%);
+  }
 }
 
 .messenger.discord {
   --accent-color: #5865f2;
 
   background: radial-gradient(100.19% 215.66% at -0.09% 0.3%, rgba(88, 101, 242, 0.3) 0%, rgba(88, 101, 242, 0) 100%);
+
+  @media screen(md) {
+    border-radius: 0 1.4rem 1.4rem 0;
+    background: radial-gradient(
+      100.19% 215.66% at -0.09% 0.3%,
+      rgba(88, 101, 242, 0.174) 0%,
+      rgba(88, 101, 242, 0.3) 100%
+    );
+  }
 }
 
 .messenger__header {
@@ -32,6 +58,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media screen(md) {
+    gap: 1.3rem;
+  }
 }
 
 .messenger__logo {
@@ -42,12 +72,24 @@
   justify-content: center;
   flex: 0 1 auto;
   color: var(--accent-color);
+
+  @media screen(md) {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
 }
 
 .messenger__title {
   font-size: 0.85rem;
   font-weight: 600;
   flex: 1 1 auto;
+
+  @media screen(md) {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--accent-color);
+  }
 }
 
 .messenger__text {
@@ -55,6 +97,10 @@
 
   @media screen(md) {
     display: block;
+    color: var(--accent-color);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    opacity: 0.7;
   }
 }
 
@@ -63,4 +109,9 @@
   height: 1.1rem;
   flex: 0 1 auto;
   color: var(--accent-color) !important;
+
+  @media screen(md) {
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+  }
 }
