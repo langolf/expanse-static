@@ -1,5 +1,6 @@
 .landing-changes {
   position: relative;
+  overflow-x: hidden;
 }
 
 .landing-changes__inner {
@@ -74,6 +75,8 @@
 
 .cards {
   display: flex;
+  max-width: 100%;
+  min-width: auto;
 
   @media screen(md) {
     transform: translate(90px, 90px);

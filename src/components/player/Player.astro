@@ -3,7 +3,7 @@ import Icon from '../icon/Icon.astro';
 ---
 
 <div class="player flex items-center justify-center flex-col size-[4.15rem] bg-ex-firmcolor rounded-full">
-  <div class="player__control mb-1">
+  <div class="player__control">
     <div class="player__icon pl-1 flex items-center justify-center size-[1.6rem]">
       <Icon name="play" width="18px" height="22px" />
     </div>
@@ -11,3 +11,10 @@ import Icon from '../icon/Icon.astro';
 
   <div class="player__label text-[0.66rem]">mp3</div>
 </div>
+
+<style>
+  .player {
+    width: theme(size.playerIconSize);
+    height: theme(size.playerIconSize);
+  }
+</style>

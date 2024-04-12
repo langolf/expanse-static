@@ -6,11 +6,19 @@ body {
   background-color: theme('colors.ex.dark.900');
   background-image: url('/src/assets/images/bg-pattern.png');
   color: theme('colors.ex.neutral');
-  padding-top: theme(size.16);
+
   font-size: theme(fontSize.sm);
 
   @media screen(xl) {
     font-size: theme(fontSize.base);
+  }
+}
+
+.main {
+  position: relative;
+
+  @media screen(md) {
+    padding-top: 0;
   }
 }
 

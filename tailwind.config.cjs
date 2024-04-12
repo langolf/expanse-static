@@ -22,6 +22,8 @@ module.exports = {
     extend: {
       size: {
         inner: '1060px',
+        toplineMaxHeight: '68px',
+        playerIconSize: '70px',
       },
       fontSize: {
         xsm: '0.75rem',
