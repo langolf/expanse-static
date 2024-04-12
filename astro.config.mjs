@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: 'static',
-  site: 'https://langolf.github.io/expanse-static/',
+  site: 'https://langolf.github.io/',
   build: {
     format: 'file',
     inlineStylesheets: 'never',
