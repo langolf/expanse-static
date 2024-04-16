@@ -9,9 +9,18 @@ import Player from '~/components/player/Player.astro';
 const { rest } = Astro.props;
 ---
 
+<script>
+  import Parallax from 'parallax-js';
+
+  var scene = document.getElementById('scene');
+  var parallaxInstance = new Parallax(scene);
+</script>
+
 <section id="landing-hero" class="hero">
   <div class="hero__bg">
-    <Image src={imageSkullSrc} alt="" />
+    <div id="scene">
+      <Image data-depth="0.1" src={imageSkullSrc} alt="" />
+    </div>
     <Fragment set:html={SvgOverSkull} />
   </div>
 

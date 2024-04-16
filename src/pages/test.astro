@@ -19,7 +19,8 @@ import { spiritSpells } from '~/components/spells/spells-list';
 
 <style lang="postcss">
   .story {
-    position: absolute;
+    @media screen(md) {
+      position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
@@ -28,9 +29,14 @@ import { spiritSpells } from '~/components/spells/spells-list';
     display: flex;
     align-items: center;
     justify-content: center;
+    }
   }
 
   .story__inner {
     flex: 1 1 auto;
+
+    @media screen(md) {
+      padding: 0 190px;
+    }
   }
 </style>

@@ -5,24 +5,26 @@ import Icon from '../icon/Icon.astro';
 const { type, title } = Astro.props;
 ---
 
-<dialog id={`modal_${type}`} class="modal">
+<dialog id={`modal_${type}`} class:list={['modal', { [`modal--${type}`]: type }]}>
   <div class="modal__inner modal-box">
-    <form class="modal__close" method="dialog">
-      <button>
-        Закрыть <Icon name="close" />
+    <form class="modal__close" aria-label="Закрыть" method="dialog">
+      <button type="button" onclick={`modal_${type}.close()`}>
+        закрыть <Icon name="close" />
       </button>
     </form>
 
-    <div class="modal__header">
-      <h3 class="">{title}</h3>
-    </div>
+    <div class="modal__body">
+      <div class="modal__header">
+        <h3 set:html={title} />
+      </div>
 
-    <div class="modal__content">
-      <slot />
+      <div class="modal__content">
+        <slot />
+      </div>
     </div>
   </div>
 
   <form method="dialog" class="modal__backdrop">
-    <button> Закрыть </button>
+    <button>Закрыть</button>
   </form>
 </dialog>

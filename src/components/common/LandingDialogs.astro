@@ -1,11 +1,40 @@
 ---
 import Dialog from '~/components/dialog/Dialog.astro';
 import Spells from '../spells/Spells.astro';
+
+import { spiritSpells, evaSpells, shilenSpells, templarSpells } from '../spells/spells-list';
 ---
 
-<Dialog type="spirit" title="Дух">
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet provident, tempore magnam quos enim veniam at sed.
-  Expedita consequatur ab, dolor maiores rerum quisquam vitae! Magni a quam quasi qui.
+<Dialog type="group" title="<span class='font-light'>Умения</span> Храмовника Евы и Храмовника Шилен">
+  <Spells
+    type="eva"
+    list={evaSpells}
+    title="Ева"
+    intro="Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь. <br/><br>Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций."
+  />
+  <Spells
+    type="shilen"
+    list={shilenSpells}
+    title="Ева"
+    intro="Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь. <br/>Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций."
+  />
+</Dialog>
 
-  <Spells title="Ева" intro="asdasd" />
+<Dialog type="spirit" title="Дух">
+  <Spells
+    type="spirit"
+    list={spiritSpells}
+    title="Ева"
+    intro={`Дух - это маг Высших Эльфов, который использует пламенную, морозную, природную магию и магию света.
+      Может экипировать только двуручное магическое дробящее оружие, и когда экипирует его, внешность автоматически меняется в Сферу Духа, которая может использовать разную магию. Может экипировать только символ.`}
+  />
+</Dialog>
+
+<Dialog type="templar" title="Священный<br>Храмовник">
+  <Spells
+    type="templar"
+    list={templarSpells}
+    title="Ева"
+    intro="Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь. <br/><br>Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций."
+  />
 </Dialog>

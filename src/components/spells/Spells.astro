@@ -1,24 +1,29 @@
 ---
 import './spells.css';
-const { align, title, intro, list } = Astro.props;
+const { type, align, title, intro, list } = Astro.props;
 ---
 
 <script>
   import { Tab } from 'bootstrap';
-  const triggerTabList = document.querySelectorAll('#spells-tabs button');
-  triggerTabList.forEach((triggerEl) => {
-    const tabTrigger = new Tab('#spells-tabs');
+  const tabElement = document.querySelectorAll('.spells__list');
+  const triggerElements = document.querySelectorAll('.spells__nav button');
 
-    triggerEl.addEventListener('click', (event) => {
-      event.preventDefault();
-      tabTrigger.show();
+  tabElement.forEach((el) => {
+    const navList = el.querySelector('.spells__nav');
+    const tabTrigger = new Tab(navList.getAttribute('id'));
+
+    triggerElements.forEach((el) => {
+      el.addEventListener('click', (event) => {
+        event.preventDefault();
+        tabTrigger.show();
+      });
     });
   });
 </script>
 
 <div class="spells">
   <div class="spells__intro">
-    <p>{intro}</p>
+    <p set:html={intro} />
   </div>
 
   <div class="spells__title">
@@ -26,7 +31,7 @@ const { align, title, intro, list } = Astro.props;
   </div>
 
   <div class="spells__list">
-    <ul class="spells__nav" id="spells-tabs" role="tablist">
+    <ul class="spells__nav" id={`spells-tabs-${type}`} role="tablist">
       {
         list &&
           list.map((spell, id) => (
@@ -35,7 +40,7 @@ const { align, title, intro, list } = Astro.props;
                 class:list={['spells__nav-button', { [`active`]: id == 0 }]}
                 id={`spell-${spell.id}-tab`}
                 data-bs-toggle="tab"
-                data-bs-target={`#spell-${spell.id}-tab-pane`}
+                data-bs-target={`#spell-${type}-${spell.id}-tab-pane`}
                 type="button"
                 role="tab"
                 aria-controls={`spell-${spell.id}-tab-pane`}
@@ -52,8 +57,8 @@ const { align, title, intro, list } = Astro.props;
         list &&
           list.map((spell, id) => (
             <div
-              class:list={('spells__tab-pane', { [`show`]: id == 0 })}
-              id={`spell-${spell.id}-tab-pane`}
+              class:list={['spells__tab-pane', { [`active show`]: id == 0 }]}
+              id={`spell-${type}-${spell.id}-tab-pane`}
               role="tabpanel"
               aria-labelledby={`${spell.id}-tab`}
               tabindex="0"

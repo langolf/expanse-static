@@ -14,39 +14,42 @@
   top: 0;
   overflow: hidden;
 
-  > svg {
-    display: none;
+  #scene {
+    position: relative;
   }
 
   img {
     object-fit: contain;
     position: relative;
-    height: 100vh;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(940px, 0);
     max-width: initial;
+    transform: translate(940px, 0);
+    height: 100vh;
+  }
+
+  svg {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    width: 598px;
+    height: 1060.5px;
+    right: -280px;
+    top: -260px;
+    mix-blend-mode: difference;
   }
 
   @media screen(md) {
-    > svg {
-      position: absolute;
-      display: block;
-      right: -280px;
-      top: -260px;
-      width: 598px;
-      height: 1060.5px;
-      z-index: 10;
-      mix-blend-mode: difference;
-    }
-
     img {
       position: relative;
       top: initial;
       right: initial;
-      height: 100%;
-      transform: translate(170px, 0px);
+      height: 110vh;
+    }
+
+    svg {
+      display: block;
     }
   }
 }

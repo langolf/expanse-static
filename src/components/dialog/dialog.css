@@ -7,14 +7,29 @@
 
   &:not(dialog:not(.modal-open)),
   &::backdrop {
-    background: radial-gradient(104.06% 148.66% at 50% 0%, #322b22 0%, #13100e 100%);
     animation: modal-pop 0.2s ease-out;
     opacity: 0.95;
+  }
+
+  @media screen(md) {
+    align-items: flex-start;
   }
 }
 
 .modal__backdrop {
-  @apply -z-[1] col-start-1 row-start-1 grid self-stretch justify-self-stretch text-transparent;
+  @apply text-transparent;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  button {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .modal-scroll {
@@ -26,11 +41,35 @@
 }
 
 .modal__inner {
-  @apply col-start-1 row-start-1 w-11/12 max-w-lg scale-90 transform p-6 transition duration-200 ease-out;
-  max-height: calc(100vh - 5em);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  @apply col-start-1 row-start-1 scale-90 transform transition duration-200 ease-out;
+  display: flex;
+  z-index: 2;
+  flex-direction: column;
   overflow-y: auto;
   overscroll-behavior: contain;
+  height: 100vh;
+  max-width: 100vw;
+  padding: 0 1.4rem;
+
+  @media screen(md) {
+    display: flex;
+    height: 100vh;
+    max-width: 1080px;
+    margin-top: 0px;
+    padding: 0 15px;
+  }
+}
+
+.modal__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  justify-content: center;
+
+  @media screen(md) {
+    padding-top: 0;
+  }
 }
 
 .modal-open,
@@ -51,4 +90,73 @@
 :root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
   @apply overflow-hidden;
   scrollbar-gutter: stable;
+}
+
+.modal__header {
+  margin-bottom: 1.4rem;
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  @media screen(md) {
+    margin-bottom: 3.7rem;
+
+    h3 {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+.modal__close {
+  position: absolute;
+  opacity: 0.4;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0;
+  z-index: 50;
+
+  .icon {
+    @apply size-[2.58rem];
+  }
+
+  @media screen(md) {
+    font-size: 0.8rem;
+    pointer-events: none;
+    top: 1.9rem;
+    right: 1.9rem;
+
+    .icon {
+      margin-left: 0.6rem;
+    }
+  }
+}
+
+.modal--group {
+  --spells-accent-color: theme(colors.ex.neutral);
+  --spells-title-color: theme(colors.ex.dark.900);
+
+  &::backdrop {
+    background: radial-gradient(104.06% 148.66% at 50% 0%, #322b22 0%, #13100e 100%);
+  }
+}
+
+.modal--spirit {
+  --spells-accent-color: theme(colors.ex.ice);
+  --spells-title-color: theme(colors.ex.neutral);
+
+  &::backdrop {
+    background: radial-gradient(104.06% 148.66% at 50% 0%, #222432 0%, #0e0e13 100%);
+  }
+}
+
+.modal--templar {
+  --spells-accent-color: theme(colors.ex.firmcolor);
+  --spells-title-color: theme(colors.ex.neutral);
+
+  &::backdrop {
+    background: radial-gradient(104.06% 148.66% at 50% 0%, #322227 0%, #130e0f 100%);
+  }
 }
