@@ -1,0 +1,36 @@
+---
+// Component Imports
+import Layout from '../layouts/Layout.astro';
+import Spells from '~/components/spells/Spells.astro';
+import { spiritSpells } from '~/components/spells/spells-list';
+---
+
+<Layout hasFooter={false}>
+  <div class="story">
+    <div class="story__inner">
+      <Spells
+        title="Ева"
+        intro="Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь. Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций."
+        list={spiritSpells}
+      />
+    </div>
+  </div>
+</Layout>
+
+<style lang="postcss">
+  .story {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .story__inner {
+    flex: 1 1 auto;
+  }
+</style>

@@ -14,6 +14,10 @@
   top: 0;
   overflow: hidden;
 
+  > svg {
+    display: none;
+  }
+
   img {
     object-fit: contain;
     position: relative;
@@ -26,6 +30,17 @@
   }
 
   @media screen(md) {
+    > svg {
+      position: absolute;
+      display: block;
+      right: -280px;
+      top: -260px;
+      width: 598px;
+      height: 1060.5px;
+      z-index: 10;
+      mix-blend-mode: difference;
+    }
+
     img {
       position: relative;
       top: initial;

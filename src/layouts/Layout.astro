@@ -3,8 +3,10 @@ import Footer from '~/components/Footer/Footer.astro';
 import '../../src/assets/styles/tailwind.css';
 import CustomStyles from '../components/CustomStyles.astro';
 import BasicScripts from '../components/common/BasicScripts.astro';
+import LandingDiaglos from '~/components/common/LandingDialogs.astro';
 
 // import BasicScripts from '~/components/common/BasicScripts.astro';
+const { hasFooter = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +32,8 @@ import BasicScripts from '../components/common/BasicScripts.astro';
       <slot />
     </main>
 
-    <Footer />
+    {hasFooter && <Footer />}
+    <LandingDiaglos />
 
     <BasicScripts />
 

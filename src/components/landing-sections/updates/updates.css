@@ -1,5 +1,9 @@
 .landing-updates {
   position: relative;
+
+  @media screen(md) {
+    overflow-x: hidden;
+  }
 }
 
 .landing-updates__bg {

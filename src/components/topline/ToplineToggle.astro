@@ -1,13 +1,12 @@
 ---
-import {Icon} from "astro-icon/components";
+import Icon from '~/components/icon/Icon.astro';
 
-const  {isClosed} = Astro.props;
+const { isClosed = false } = Astro.props;
 ---
-<div class="topline__toggle xl:hidden" data-aw-toggle-menu >
-  <div class="h-full flex items-center justify-center">
-    {isClosed &&
-      <Icon name="close"/>}
-    {!isClosed &&
-      <Icon name="menu"/>}
+
+<div class="topline__toggle xl:hidden" data-aw-toggle-menu>
+  <div class="topline__toggle-icon h-full flex items-center justify-center">
+    {isClosed && <Icon name="close" />}
+    {!isClosed && <Icon name="menu" />}
   </div>
 </div>

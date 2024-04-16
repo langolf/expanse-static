@@ -1,0 +1,28 @@
+---
+import './dialog.css';
+import Icon from '../icon/Icon.astro';
+
+const { type, title } = Astro.props;
+---
+
+<dialog id={`modal_${type}`} class="modal">
+  <div class="modal__inner modal-box">
+    <form class="modal__close" method="dialog">
+      <button>
+        Закрыть <Icon name="close" />
+      </button>
+    </form>
+
+    <div class="modal__header">
+      <h3 class="">{title}</h3>
+    </div>
+
+    <div class="modal__content">
+      <slot />
+    </div>
+  </div>
+
+  <form method="dialog" class="modal__backdrop">
+    <button> Закрыть </button>
+  </form>
+</dialog>

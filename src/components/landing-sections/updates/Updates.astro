@@ -43,7 +43,7 @@ const list = [
 
             <div class="new-race__cta">
               <div class="new-race__title">{title}</div>
-              <button data-aw-modal type="button" class="new-race__button">
+              <button data-aw-modal type="button" class="new-race__button" onclick={`modal_${id}.showModal()`}>
                 {ctaText}
               </button>
             </div>

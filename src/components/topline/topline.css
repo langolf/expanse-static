@@ -13,6 +13,7 @@
   @media screen(xl) {
     min-height: theme('size.16');
     bottom: auto;
+    border-bottom: 1px solid theme(colors.ui.separator);
   }
 }
 
@@ -23,6 +24,7 @@
 
   @media screen(xl) {
     flex-direction: row;
+    max-width: 1440px;
   }
 }
 
@@ -68,10 +70,14 @@
   right: 0;
   width: theme('size.16');
   height: theme('size.16');
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.topline__lang {
-  cursor: pointer;
+.topline__toggle-icon {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .topline__nav {
@@ -101,6 +107,11 @@
 .topline__menu-item {
   display: flex;
   flex: 1 1 auto;
+  border-bottom: 1px solid #28232f;
+
+  @media screen(xl) {
+    border-bottom: 0;
+  }
 }
 
 .topline__nav-link {
@@ -186,6 +197,8 @@
   }
 
   @media screen(xl) {
+    flex: 0 1 auto;
+
     .link {
       justify-content: center;
       padding-left: theme('spacing.4');
@@ -194,8 +207,7 @@
   }
 }
 
-.topline__inner > *,
-.topline__menu li:not(:last-child) {
+.topline__inner > * {
   border-bottom: 1px solid #28232f;
 
   @media screen(xl) {
@@ -208,13 +220,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
   color: #443c4f;
   font-size: theme('fontSize.sm');
 
   @media screen(xl) {
-    padding-left: theme('spacing.4');
-    padding-right: theme('spacing.4');
+    padding-left: theme('spacing.6');
+    padding-right: theme('spacing.6');
   }
 }
 

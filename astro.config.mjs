@@ -17,7 +17,6 @@ export default defineConfig({
   },
   compressHTML: false,
   integrations: [
-    react(),
     icon({
       svgoOptions: false,
     }),

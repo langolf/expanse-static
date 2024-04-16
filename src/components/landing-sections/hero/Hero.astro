@@ -2,6 +2,7 @@
 import './hero.css';
 import Image from 'astro/components/Image.astro';
 import imageSkullSrc from '~/assets/images/skull-fire.png';
+import SvgOverSkull from './assets/shape-over.svg?raw';
 import logoSrc from '~/assets/images/symbol-vertical.svg';
 import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
@@ -11,6 +12,7 @@ const { rest } = Astro.props;
 <section id="landing-hero" class="hero">
   <div class="hero__bg">
     <Image src={imageSkullSrc} alt="" />
+    <Fragment set:html={SvgOverSkull} />
   </div>
 
   <div class="hero__inner inner">

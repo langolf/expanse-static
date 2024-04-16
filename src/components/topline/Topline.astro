@@ -16,11 +16,14 @@ const { isClosed } = Astro.props;
 ---
 
 <script>
+  import { isOpen } from '../../store.js';
+
   const toggle = document.querySelector('[data-aw-toggle-menu]');
   const topline = document.querySelector('[data-aw-topline]');
 
   toggle.addEventListener('click', () => {
     topline.classList.toggle('is-closed');
+    isOpen.set(!isOpen.value);
   });
 </script>
 
@@ -39,7 +42,7 @@ const { isClosed } = Astro.props;
     <div class="border-b border-b-ui-separator">
       <ToplineLogo />
       <ToplineReg classes="mobile" />
-      <ToplineToggle isClosed={isClosed} />
+      <ToplineToggle />
     </div>
 
     <div class="topline__inner">

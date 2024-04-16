@@ -1,6 +1,11 @@
 .landing-changes {
   position: relative;
   overflow-x: hidden;
+
+  @media screen(md) {
+    overflow-x: initial;
+    margin-bottom: 100px;
+  }
 }
 
 .landing-changes__inner {

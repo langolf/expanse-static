@@ -1,0 +1,54 @@
+.modal {
+  @apply bg-transparent text-[inherit] duration-200 ease-out pointer-events-none fixed inset-0 m-0 grid h-full max-h-none w-full max-w-none justify-items-center p-0 opacity-0;
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+  z-index: 999;
+
+  &:not(dialog:not(.modal-open)),
+  &::backdrop {
+    background: radial-gradient(104.06% 148.66% at 50% 0%, #322b22 0%, #13100e 100%);
+    animation: modal-pop 0.2s ease-out;
+    opacity: 0.95;
+  }
+}
+
+.modal__backdrop {
+  @apply -z-[1] col-start-1 row-start-1 grid self-stretch justify-self-stretch text-transparent;
+}
+
+.modal-scroll {
+  overscroll-behavior: auto;
+}
+
+:where(.modal) {
+  @apply items-center;
+}
+
+.modal__inner {
+  @apply col-start-1 row-start-1 w-11/12 max-w-lg scale-90 transform p-6 transition duration-200 ease-out;
+  max-height: calc(100vh - 5em);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.modal-open,
+.modal:target,
+.modal-toggle:checked + .modal,
+.modal[open] {
+  @apply pointer-events-auto visible opacity-100;
+}
+
+.modal-action {
+  @apply flex;
+}
+
+.modal-toggle {
+  @apply fixed h-0 w-0 appearance-none opacity-0;
+}
+
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+  @apply overflow-hidden;
+  scrollbar-gutter: stable;
+}

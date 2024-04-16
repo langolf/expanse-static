@@ -73,6 +73,11 @@
   flex: 0 1 auto;
   color: var(--accent-color);
 
+  /* safari fix */
+  svg {
+    flex: 1 1 auto;
+  }
+
   @media screen(md) {
     width: 2.6rem;
     height: 2.6rem;
