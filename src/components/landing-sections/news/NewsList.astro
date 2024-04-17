@@ -39,7 +39,7 @@ const { type, ...rest } = Astro.props;
 <article class:list={['landing-news__articles', 'js-news-articles', { [`type-${type}`]: type }]} {...rest}>
   {
     articles.map(({ date, category, title, link, image }) => (
-      <section class="news-article">
+      <a href="/" class="news-article js-news-article">
         <div class="news-article__media">
           <Image class="news-article__image" src={images[`${image}`]()} alt="" />
           <div class="news-article__date">{date}</div>
@@ -49,7 +49,7 @@ const { type, ...rest } = Astro.props;
         </div>
 
         <h2 class="news-article__title">{title}</h2>
-      </section>
+      </a>
     ))
   }
 </article>

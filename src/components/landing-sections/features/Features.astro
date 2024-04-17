@@ -2,16 +2,36 @@
 import './features.css';
 import Image from 'astro/components/Image.astro';
 import imageSword from '~/assets/images/sword.png';
-import imageSwordSplash from '~/assets/images/sword-splash.png';
+import imageSplash from '~/assets/images/sword-splash.png';
+import SvgRadialGradient from '~/assets/images/radial-gradient.svg';
 import imageSwordWithSplash from '~/assets/images/sword-with-splash.png';
 import imageFeaturesTitleSvgRu from './assets/features-ru.svg';
 import Button from '~/components/button/Button.astro';
 ---
 
+<script>
+  import Parallax from 'parallax-js';
+
+  var featuresScene = document.getElementById('features-scene');
+  var parallaxInstance = new Parallax(featuresScene, {
+    relativeInput: true,
+    clipRelativeInput: true,
+    calibrateX: true,
+  });
+
+  if (window.innerWidth < 700) {
+    parallaxInstance.destroy();
+  }
+</script>
+
 <section id="landing-features" class="landing-features">
-  <div class="landing-features__bg hidden md:block">
-    <!-- <Image class="sword-splash" src={imageSwordSplash} alt="" /> -->
-    <Image class="sword" src={imageSwordWithSplash} alt="" />
+  <div id="features-scene" class="landing-features__bg hidden md:block">
+    <Image data-depth="0.1" class="splash" src={imageSplash} alt="" />
+    <div data-depth="0.2" class="layer">
+      <Image class="gradient" src={SvgRadialGradient} alt="" />
+    </div>
+    <Image data-depth="0.3" class="sword" src={imageSword} alt="" />
+    <!-- <Image class="sword" src={imageSwordWithSplash} alt="" /> -->
   </div>
 
   <div class="landing-features__inner inner">

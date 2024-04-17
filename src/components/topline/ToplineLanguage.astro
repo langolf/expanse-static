@@ -1,10 +1,24 @@
 ---
-import {Icon} from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
+import Dropdown from '../dropdown/Dropdown.astro';
 
-const {classes = ''} = Astro.props;
+const { classes = '' } = Astro.props;
 ---
 
-<div class:list={["topline__lang", classes]}>
-  <Icon name="globe"/>
-  <span>en</span>
+<div class:list={['topline__lang', classes]} data-bs-toggle="dropdown" aria-expanded="false">
+  <div class="topline__lang-control">
+    <Icon name="globe" />
+    <span>en</span>
+  </div>
+
+  <Dropdown class="topline__lang-dropdown">
+    <ul class="topline__lang-menu">
+      <li>
+        <a href="/">ru</a>
+      </li>
+      <li>
+        <a href="/">en</a>
+      </li>
+    </ul>
+  </Dropdown>
 </div>

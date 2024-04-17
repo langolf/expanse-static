@@ -17,6 +17,7 @@ const { isClosed } = Astro.props;
 
 <script>
   import { isOpen } from '../../store.js';
+  import { Dropdown } from 'bootstrap';
 
   const toggle = document.querySelector('[data-aw-toggle-menu]');
   const topline = document.querySelector('[data-aw-topline]');
@@ -25,6 +26,9 @@ const { isClosed } = Astro.props;
     topline.classList.toggle('is-closed');
     isOpen.set(!isOpen.value);
   });
+
+  const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+  const dropdownList = [...dropdownElementList].map((dropdownToggleEl) => new Dropdown(dropdownToggleEl));
 </script>
 
 <header data-aw-topline class:list={['topline', { ['is-closed']: isClosed }]}>

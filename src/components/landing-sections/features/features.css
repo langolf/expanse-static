@@ -4,6 +4,10 @@
 
 .landing-features {
   position: relative;
+
+  @media screen(md) {
+    padding-bottom: 5rem;
+  }
 }
 
 .landing-features__bg {
@@ -14,33 +18,40 @@
   bottom: 0;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
 
-  &::before {
-    content: '';
+  .layer {
     position: absolute;
+    height: 100%;
+    width: 100%;
     left: 0;
     top: 0;
-    position: absolute;
-    width: 1089px;
-    height: 1089px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(39, 190, 238, 0.66) 0%, rgba(22, 109, 136, 0) 100%);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
   }
-}
 
-.sword {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-290px, 80px);
-  max-width: initial;
-  width: 1380px;
-}
+  .sword {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
-.sword-splash {
-  position: absolute;
-  left: 0;
-  top: 0;
+  .gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate3d(-26%, 38%, 0);
+  }
+
+  .splash {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen(md) {
+    height: initial;
+  }
 }
 
 .landing-features__inner {

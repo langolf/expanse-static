@@ -1,3 +1,33 @@
+@define-mixin topline-hover $color, $active {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: $color;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      transform: translateY(0px);
+    }
+  }
+
+  &:active {
+    &::before {
+      background: $active;
+    }
+  }
+}
+
 .topline {
   display: flex;
   position: absolute;
@@ -34,6 +64,7 @@
   justify-content: center;
   padding-left: theme('spacing.4');
   min-height: theme('size.16');
+  cursor: pointer;
 
   @media screen(xl) {
     flex-direction: row;
@@ -45,6 +76,7 @@
       border-right: 1px solid theme('colors.ui.separator');
       padding-left: theme('spacing.4');
       padding-right: theme('spacing.4');
+      @mixin topline-hover rgb(249, 243, 222, 0.1), rgb(249, 243, 222, 0.05);
     }
   }
 }
@@ -123,9 +155,11 @@
 
   @media screen(xl) {
     font-size: 13px;
+    white-space: nowrap;
     justify-content: center;
     padding-left: theme('spacing.2');
     padding-right: theme('spacing.2');
+    @mixin topline-hover theme(colors.ex.firmcolor), rgb(238, 39, 89, 0.3);
   }
 }
 
@@ -145,6 +179,7 @@
   &:not(.mobile) {
     @media screen(xl) {
       background: transparent;
+      @mixin topline-hover theme(colors.ex.firmcolor), rgb(238, 39, 89, 0.3);
 
       .link {
         padding-left: theme('spacing.4');
@@ -198,6 +233,7 @@
 
   @media screen(xl) {
     flex: 0 1 auto;
+    @mixin topline-hover theme(colors.ex.firmcolor), rgb(238, 39, 89, 0.3);
 
     .link {
       justify-content: center;
@@ -217,17 +253,58 @@
 }
 
 .topline__lang {
+  color: #443c4f;
+  font-size: theme('fontSize.sm');
+  position: relative;
+}
+
+.topline__lang-dropdown {
+  width: 100%;
+  min-width: auto;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.topline__lang-control {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   justify-content: center;
-  color: #443c4f;
-  font-size: theme('fontSize.sm');
+  height: 100%;
+  width: 100%;
 
   @media screen(xl) {
+    @mixin topline-hover rgb(40, 35, 47, 0.5), rgb(40, 35, 47, 0.2);
     padding-left: theme('spacing.6');
     padding-right: theme('spacing.6');
+  }
+}
+
+.topline__lang-menu {
+  background: theme(colors.ex.dark.900);
+  color: #443c4f;
+  font-size: 1rem;
+  font-weight: 500;
+
+  li {
+    border-bottom: 1px solid rgb(128, 128, 128, 0.2);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background: rgb(68, 60, 79, 0.3);
+    }
+
+    &:active {
+      background: rgb(68, 60, 79, 0.2);
+      color: rgb(68, 60, 79, 0.5);
+    }
   }
 }
 

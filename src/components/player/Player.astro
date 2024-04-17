@@ -16,5 +16,10 @@ import Icon from '../icon/Icon.astro';
   .player {
     width: theme(size.playerIconSize);
     height: theme(size.playerIconSize);
+
+    &:hover {
+      outline: 4px solid theme(colors.ex.firmcolor);
+      box-shadow: inset 0 0 0px 3px theme(colors.ex.firmcolor);
+    }
   }
 </style>

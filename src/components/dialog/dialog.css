@@ -3,6 +3,7 @@
   transition-property: transform, opacity, visibility;
   overflow-y: hidden;
   overscroll-behavior: contain;
+  display: none;
   z-index: 999;
 
   &:not(dialog:not(.modal-open)),
@@ -77,6 +78,7 @@
 .modal-toggle:checked + .modal,
 .modal[open] {
   @apply pointer-events-auto visible opacity-100;
+  display: grid;
 }
 
 .modal-action {
