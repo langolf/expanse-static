@@ -36,6 +36,31 @@ const articles = [
 const { type, ...rest } = Astro.props;
 ---
 
+<script>
+  (function () {
+    function scrollHorizontally(e) {
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
+      this.scrollLeft -= delta * 40; // Multiplied by 40
+      if (
+        (delta > 0 && document.querySelector('.js-news-articles').scrollLeft > 0) ||
+        (delta < 0 &&
+          document.querySelector('.js-news-articles').offsetWidth +
+            document.querySelector('.js-news-articles').scrollLeft <
+            document.querySelector('.js-news-articles').scrollWidth)
+      ) {
+        e.preventDefault();
+      }
+    }
+    if (document.querySelector('.js-news-articles').addEventListener) {
+      // IE9, Chrome, Safari, Opera
+      document.querySelector('.js-news-articles').addEventListener('mousewheel', scrollHorizontally, false);
+      // Firefox
+      document.querySelector('.js-news-articles').addEventListener('DOMMouseScroll', scrollHorizontally, false);
+    }
+  })();
+</script>
+
 <article class:list={['landing-news__articles', 'js-news-articles', { [`type-${type}`]: type }]} {...rest}>
   {
     articles.map(({ date, category, title, link, image }) => (

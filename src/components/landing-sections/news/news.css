@@ -145,6 +145,9 @@
 
   @media screen(md) {
     gap: 2.4rem;
+    overflow-y: initial;
+    overflow-x: hidden;
+    padding-bottom: 0.5rem;
   }
 }
 

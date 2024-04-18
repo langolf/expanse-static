@@ -6,8 +6,21 @@ import imageSpiritSrc from './assets/spirit.png';
 import imageTemplarSrc from './assets/templar.png';
 
 const list = [
-  { id: 'spirit', title: 'Дух', ctaText: 'Посмотреть умения', imgSrc: imageSpiritSrc },
-  { id: 'templar', title: 'Священный Храмовник', ctaText: 'Посмотреть умения', imgSrc: imageTemplarSrc },
+  {
+    id: 'spirit',
+    title: 'Дух',
+    ctaText: 'Посмотреть умения',
+    imgSrc: imageSpiritSrc,
+    text: `Дух - это маг Высших Эльфов, который использует пламенную, морозную, природную магию и магию света. Может экипировать только двуручное магическое дробящее оружие, и когда экипирует его, внешность автоматически меняется в Сферу Духа, которая может использовать разную магию. Может экипировать только символ.`,
+  },
+  {
+    id: 'templar',
+    title: 'Священный Храмовник',
+    ctaText: 'Посмотреть умения',
+    imgSrc: imageTemplarSrc,
+    text: `Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь.
+  Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций.`,
+  },
 ];
 ---
 
@@ -35,14 +48,17 @@ const list = [
 
     <div class="new-race">
       {
-        list.map(({ title, id, ctaText, imgSrc }) => (
+        list.map(({ title, id, ctaText, imgSrc, text }) => (
           <div class:list={['new-race__item', { [`${id}`]: id }]} id={id}>
-            <div class="new-race__media  aspect-[360/400]">
-              <Image src={imgSrc} alt="" />
+            <div class="new-race__media">
+              <Image class="new-race__image" src={imgSrc} alt="" />
             </div>
 
             <div class="new-race__cta">
               <div class="new-race__title">{title}</div>
+              <div class="new-race__text">
+                <p>{text}</p>
+              </div>
               <button data-aw-modal type="button" class="new-race__button" onclick={`modal_${id}.showModal()`}>
                 {ctaText}
               </button>

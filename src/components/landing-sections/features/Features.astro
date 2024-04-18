@@ -30,12 +30,15 @@ import Button from '~/components/button/Button.astro';
     <div data-depth="0.2" class="layer">
       <Image class="gradient" src={SvgRadialGradient} alt="" />
     </div>
-    <Image data-depth="0.3" class="sword" src={imageSword} alt="" />
+    <div data-depth="0.3" class="layer">
+      <Image class="sword" src={imageSword} alt="" />
+    </div>
     <!-- <Image class="sword" src={imageSwordWithSplash} alt="" /> -->
   </div>
 
   <div class="landing-features__inner inner">
     <div class="landing-features__header" aria-label="title">
+      <h1>Особенности</h1>
       <Image src={imageFeaturesTitleSvgRu} alt="Особенности" />
     </div>
 

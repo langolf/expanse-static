@@ -110,9 +110,25 @@
   }
 }
 
+/* for gradient animations we need variables */
+
+@property --gradient-color-start {
+  syntax: '<color>';
+  initial-value: rgba(28, 69, 117, 0);
+  inherits: false;
+}
+
+@property --gradient-color-end {
+  syntax: '<color>';
+  initial-value: rgba(53, 129, 219, 0.5);
+  inherits: false;
+}
+
 .new-race__item {
   position: relative;
   flex: 0 1 auto;
+  transition: all 0.2s ease-in;
+  will-change: transform;
 
   @media screen(md) {
     flex: 0 1 50%;
@@ -131,25 +147,62 @@
     top: 0;
     bottom: 0;
     z-index: 1;
+    opacity: 0.5;
+    will-change: transform;
+    transition:
+      all 0.2s ease-in,
+      --gradient-color-start 0.2s,
+      --gradient-color-end 0.2s;
+  }
+
+  &:hover {
+    .new-race__text {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      margin-bottom: 1rem;
+      margin-top: 0.9rem;
+      transform: translate(0px, 0px);
+    }
+
+    .new-race__media::after {
+      height: 370px;
+      opacity: 0.6;
+      background: linear-gradient(180deg, rgba(16, 14, 19, 0) 0.01%, rgba(16, 14, 19, 0.6) 42.5%);
+    }
+
+    .new-race__image {
+      transform: translate(-50%, 0);
+    }
   }
 
   &.spirit {
     &::before {
-      background: linear-gradient(180deg, rgba(28, 69, 117, 0) 0%, rgba(53, 129, 219, 0.5) 100%);
+      background: linear-gradient(180deg, var(--gradient-color-start) 0%, var(--gradient-color-end) 100%);
     }
 
-    .new-race__media img {
-      object-position: left 0 bottom -90px;
+    &:hover {
+      &::before {
+        --gradient-color-end: rgb(53, 129, 219);
+        opacity: 1;
+        background: linear-gradient(180deg, var(--gradient-color-start) 0%, var(--gradient-color-end) 57%);
+      }
     }
   }
 
   &.templar {
     &::before {
-      background: linear-gradient(180deg, rgba(136, 22, 51, 0) 0%, rgba(238, 39, 89, 0.5) 100%);
+      --gradient-color-start: rgba(136, 22, 51, 0);
+      --gradient-color-end: rgba(238, 39, 89, 0.5);
+      background: linear-gradient(180deg, var(--gradient-color-start) 0%, var(--gradient-color-end) 100%);
     }
 
-    .new-race__media img {
-      object-position: left 0 bottom -90px;
+    &:hover {
+      &::before {
+        --gradient-color-start: rgba(136, 22, 51, 0);
+        --gradient-color-end: rgb(238, 39, 89);
+        opacity: 1;
+        background: linear-gradient(180deg, var(--gradient-color-start) 0%, var(--gradient-color-end) 55.5%);
+      }
     }
   }
 }
@@ -158,6 +211,7 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+  aspect-ratio: 360/400;
 
   &::after {
     content: '';
@@ -167,15 +221,29 @@
     right: 0%;
     bottom: 0px;
     z-index: 3;
-
     background: linear-gradient(180deg, rgba(16, 14, 19, 0) 0.01%, #100e13 100%);
     opacity: 0.5;
+    transition: height 0.2s ease-in;
   }
 
-  img {
-    max-width: initial;
-    max-height: 100%;
-    object-fit: contain;
+  @media screen(md) {
+    aspect-ratio: 524/600;
+  }
+}
+
+.new-race__image {
+  width: 431px;
+  max-width: initial;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 20px);
+  transition: transform 0.2s ease-in-out;
+  will-change: transform;
+
+  @media screen(md) {
+    width: 628px;
+    height: 752px;
   }
 }
 
@@ -183,12 +251,12 @@
   z-index: 5;
   left: 0;
   right: 0;
-  position: absolute;
-  bottom: theme(spacing.9);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: theme(spacing.9);
 }
 
 .new-race__title {
@@ -199,6 +267,36 @@
   display: flex;
   align-items: center;
   text-align: center;
+  transition: all 0.4s ease-in;
+
+  @media screen(md) {
+    margin-bottom: 0;
+  }
+}
+
+.new-race__text {
+  display: none;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  grid-template-rows: 0fr;
+  padding: 0 1rem;
+  transform: translate(0, 20px);
+  transition:
+    all 0.3s,
+    grid-template-rows 0.2s ease-out;
+  opacity: 0;
+  margin-bottom: 0;
+  margin-top: 2rem;
+
+  p {
+    overflow: hidden;
+  }
+
+  @media screen(md) {
+    display: grid;
+  }
 }
 
 .new-race__button {
