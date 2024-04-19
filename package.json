@@ -18,6 +18,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/unbounded": "^5.0.19",
     "@types/canvas-confetti": "^1.6.3",
+    "animejs": "^3.2.2",
     "astro": "^4.5.15",
     "astro-icon": "^1.1.0",
     "autoprefixer": "^10.4.15",

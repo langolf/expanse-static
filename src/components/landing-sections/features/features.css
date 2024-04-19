@@ -82,6 +82,7 @@
   padding: 0 theme(spacing.2);
   max-width: 100%;
   overflow: hidden;
+  position: relative;
 
   li {
     font-weight: 400;
@@ -126,6 +127,11 @@
     padding: 0;
     max-width: initial;
     overflow: initial;
+    transform: translateY(-70px);
+    
+    li {
+      opacity: 0;
+    }
 
     li.f-chance {
       max-width: 520px;

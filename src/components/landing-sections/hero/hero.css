@@ -13,10 +13,7 @@
   left: 0;
   top: 0;
   overflow: hidden;
-
-  #scene {
-    position: relative;
-  }
+  
 
   img {
     object-fit: contain;
@@ -43,12 +40,24 @@
     img {
       position: relative;
       top: initial;
-      right: initial;
+      right: 0;
       height: 110vh;
     }
 
     svg {
       display: block;
+    }
+  }
+  
+  @media screen(2xl) {
+    .layer {
+      left: 20%;
+      
+      img {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+      }
     }
   }
 }

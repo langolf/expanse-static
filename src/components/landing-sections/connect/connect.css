@@ -124,10 +124,8 @@
       align-items: center;
       padding: 0 1.4rem 1.4rem;
       gap: 1.4rem;
-
       width: 265px;
       height: 269px;
-
       background: rgba(255, 255, 255, 0.03) !important;
       backdrop-filter: blur(12px);
     }

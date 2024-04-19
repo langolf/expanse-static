@@ -21,7 +21,7 @@ const { rest } = Astro.props;
 
 <section id="landing-hero" class="hero">
   <div class="hero__bg">
-    <div id="hero-scene">
+    <div id="hero-scene" class="layer">
       <Image data-depth="0.1" src={imageSkullSrc} alt="" />
     </div>
     <Fragment set:html={SvgOverSkull} />
