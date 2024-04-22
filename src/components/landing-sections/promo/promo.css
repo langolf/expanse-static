@@ -111,8 +111,7 @@
   transform-origin: center;
 
   @media screen(md) {
-    width: 2rem;
-    height: initial;
+    width: 3rem;
   }
 }
 

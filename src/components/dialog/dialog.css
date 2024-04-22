@@ -1,15 +1,21 @@
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+  }
+}
+
 .modal {
   @apply bg-transparent text-[inherit] duration-200 ease-out pointer-events-none fixed inset-0 m-0 grid h-full max-h-none w-full max-w-none justify-items-center p-0 opacity-0;
   transition-property: transform, opacity, visibility;
   overflow-y: hidden;
   overscroll-behavior: contain;
-  display: none;
   z-index: 999;
 
   &:not(dialog:not(.modal-open)),
   &::backdrop {
-    animation: modal-pop 0.2s ease-out;
+    animation: modal-pop 0.3s ease-out;
     opacity: 0.95;
+    background: rgba(19, 19, 19, 0.67);
   }
 
   @media screen(md) {

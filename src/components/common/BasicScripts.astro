@@ -8,21 +8,20 @@
     {
       const Dialogs = document.querySelectorAll('dialog');
 
-      if (window.innerWidth < 700) {
-        Dialogs.forEach(
-          (dial) =>
-            (dial.onOpen = function () {
-              if (dial.open) {
-                document.body.style.top = `-${window.scrollY}px`;
-                document.body.dataset.scrollY = window.scrollY;
-                // When the modal is shown, we want a fixed body
-                document.body.style.position = 'fixed';
-              }
-            })
-        ); // add onOpen empty method.
+      Dialogs.forEach(
+        (dial) =>
+          (dial.onOpen = function () {
+            if (dial.open && window.innerWidth < 700) {
+              document.body.style.top = `-${window.scrollY}px`;
+              document.body.dataset.scrollY = window.scrollY;
+              document.body.style.position = 'fixed';
+            }
+          })
+      ); // add onOpen empty method.
 
-        const ObserverM = new MutationObserver((recs) => {
-          recs.forEach(({ attributeName: attr, target: dial }) => {
+      const ObserverM = new MutationObserver((recs) => {
+        recs.forEach(({ attributeName: attr, target: dial }) => {
+          if (window.innerWidth < 700) {
             if (attr === 'open' && dial.open) {
               dial.onOpen();
             } else {
@@ -30,9 +29,17 @@
               document.body.style.top = `initial`;
               window.scrollTo({ top: document.body.getAttribute('data-scroll-y') });
             }
-          });
+          }
         });
-        Dialogs.forEach((dial) => ObserverM.observe(dial, { attributes: true }));
-      }
+      });
+      Dialogs.forEach((dial) => ObserverM.observe(dial, { attributes: true }));
     })(); // IIFE end...
+
+  const jsPromoPlay = document.querySelector('.js-promo-play');
+  const promoYoutubeEl = document.getElementById('promo-youtube');
+
+  jsPromoPlay.addEventListener('click', () => {
+    modal_promo.showModal();
+    promoYoutubeEl.setAttribute('src', `${promoYoutubeEl.getAttribute('src')}&autoplay=0`);
+  });
 </script>

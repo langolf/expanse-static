@@ -81,7 +81,6 @@
   font-size: 1.2rem;
   padding: 0 theme(spacing.2);
   max-width: 100%;
-  overflow: hidden;
   position: relative;
   transform: translateY(-70px);
 
@@ -180,6 +179,12 @@
 
     .button {
       font-size: 1.4rem;
+      @apply px-[3.8rem];
+      @apply py-[1.4rem];
+      
+      .button__text {
+        line-height: 1;
+      }
     }
   }
 }
