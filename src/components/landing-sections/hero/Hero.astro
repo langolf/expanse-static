@@ -3,6 +3,7 @@ import './hero.css';
 import Image from 'astro/components/Image.astro';
 import imageSkullSrc from '~/assets/images/skull-fire.png';
 import SvgOverSkull from './assets/shape-over.svg?raw';
+import FlameAnimation from '~/assets/images/fire_best_VP9.webm';
 import logoSrc from '~/assets/images/symbol-vertical.svg';
 import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
@@ -14,6 +15,9 @@ const { rest } = Astro.props;
   <div class="hero__bg">
     <div id="hero-scene" class="layer">
       <Image data-depth="0.1" src={imageSkullSrc} alt="" />
+      <!--<video autoplay loop muted playsinline class="flame">-->
+      <!--  <source src="/src/assets/images/fire_best_VP9.webm" type="video/webm" />-->
+      <!--</video>-->
     </div>
     <Fragment set:html={SvgOverSkull} />
   </div>

@@ -24,7 +24,16 @@
     bottom: 0;
   }
   
-  img {
+  .flame {
+    position: absolute;
+    top: 0;
+    left: 1000px;
+    z-index: 99;
+    background-image: none;
+    background-color: transparent;
+  }
+  
+  img:not(.flame) {
     object-fit: contain;
     position: absolute;
     top: 0;
@@ -46,7 +55,7 @@
   }
 
   @media screen(md) {
-    img {
+    img:not(.flame) {
       top: initial;
       right: 0;
       height: 104vh;
