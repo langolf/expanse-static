@@ -16,7 +16,7 @@
   top: 0;
   overflow: hidden;
   
-  .layer {
+  .skull {
     position: absolute;
     left: 0;
     top: 0;
@@ -24,54 +24,69 @@
     bottom: 0;
   }
   
-  .flame {
+  .skull-flame {
     position: absolute;
     top: 0;
-    left: 1000px;
+    right: 0;
     z-index: 99;
-    background-image: none;
-    background-color: transparent;
+    transform: translate(190px, 140px);
+    opacity: 0;
   }
   
-  img {
+  .skull-img {
     object-fit: contain;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 50%;
+    transform: translate(-39%, 0);
     max-width: initial;
-    transform: translate(940px, 0);
     height: 100vh;
   }
 
-  svg {
-    display: none;
-    z-index: 10;
+  .hero-svg-shape {
     position: absolute;
+    left: 0;
     right: 0;
-    bottom: 0;
-    transform: translate3d(0,0,0);
-    height: 101vh;
-    mix-blend-mode: difference;
+    width: 100%;
+    height: 100%;
+    
+    > svg {
+      display: none;
+      z-index: 10;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate3d(0,0,0);
+      height: 101vh;
+      mix-blend-mode: difference;
+    }
   }
 
   @media screen(md) {
-    img {
+    .skull-img {
+      aspect-ratio: 1918/1043;
       top: initial;
       right: 0;
       height: 102vh;
       bottom: 0;
-      transform: translate(31%,0);
+      left: initial;
+      transform: translate(28%,0);
+    }
+    
+    .skull-flame {
+      transform: translate(-43%, -67%);
+      opacity: 1;
     }
 
-    svg {
+    .hero-svg-shape > svg {
       display: block;
     }
   }
   
   @media screen and (min-width: 1600px) {
-    img {
+    .skull-img {
       object-fit: cover;
-      transform: translate(20%,0);
+      transform: translate(28%,0);
     }
   }
 }

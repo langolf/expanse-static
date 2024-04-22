@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --colors-firmcolor: #EE2759;
+  --colors-gold: #FFC530;
+  --colors-purple: #7327EE;
+  --colors-acidic: #CBCB15;
+  --colors-grey: #6A6373;
+  --colors-ice: #3581DB;
+  --colors-neutral: #F9F3DE;
+  --colors-neutral2: #F1EEE4;
+  --colors-green: #26B478;
+  
+  --inner: 100%;
+}
+
+@media screen(md) {
+  :root {
+    --inner: theme(size.inner.md);
+  }
+}
+
+@media screen(2xl) {
+  :root {
+    --inner: theme(size.inner.2xl);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  :root {
+    --inner: 1660px;
+  }
+}
+
+html {
+
+ @media screen(2xl) {
+   font-size: 20px;
+ }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 30px;
+  }
+}
+
+
+body {
+  background-color: theme('colors.ex.dark.900');
+  background-image: url('/src/assets/images/bg-pattern.png');
+  color: theme('colors.ex.neutral');
+
+  font-size: theme(fontSize.sm);
+
+  @media screen(xl) {
+    font-size: theme(fontSize.base);
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+.main {
+  position: relative;
+
+  @media screen(md) {
+    padding-top: 0;
+  }
+}
+
+.inner {
+  width: var(--inner);
+  margin: auto;
+  position: relative;
+}
+
+@define-mixin cl $size {
+  font-size: clamp($size, calc($size + (1.25 - 1.125) * ((100vw - 20rem) / (96 - 20))), $size);
+}

@@ -1,10 +1,7 @@
 ---
 import './hero.css';
-import Image from 'astro/components/Image.astro';
-import imageSkullSrc from '~/assets/images/skull-fire.png';
 import SvgOverSkull from './assets/shape-over.svg?raw';
-import FlameAnimation from '~/assets/images/fire_best_VP9.webm';
-import logoSrc from '~/assets/images/symbol-vertical.svg';
+import Logo from './assets/symbol-vertical.svg?raw';
 import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
 import Button from '../../button/Button.astro';
@@ -12,19 +9,26 @@ const { rest } = Astro.props;
 ---
 
 <section id="landing-hero" class="hero">
-  <div class="hero__bg">
-    <div id="hero-scene" class="layer">
-      <Image data-depth="0.1" src={imageSkullSrc} alt="" />
-      <!--<video autoplay loop muted playsinline class="flame">-->
-      <!--  <source src="/src/assets/images/fire_best_VP9.webm" type="video/webm" />-->
-      <!--</video>-->
+  <div class="hero__bg" role="presentation">
+    <div class="skull">
+      <img class="skull-img" src="/images/skull-fire.png" loading="lazy" decoding="async" alt="Skull" />
+
+      <svg class="skull-img" viewBox="0 0 1918 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect id="skull-flame-tracker" x="935" y="465" width="15" height="14" fill="none"></rect>
+      </svg>
+
+      <video autoplay loop muted playsinline class="skull-flame" preload="auto">
+        <source src="/images/fire_best_VP9.webm" type="video/webm" />
+      </video>
     </div>
-    <Fragment set:html={SvgOverSkull} />
+    <span class="hero-svg-shape">
+      <Fragment set:html={SvgOverSkull} />
+    </span>
   </div>
 
   <div class="hero__inner inner">
-    <div class="hero__logo">
-      <Image src={logoSrc} alt="logo" />
+    <div class="hero__logo" role="presentation">
+      <Fragment set:html={Logo} />
     </div>
 
     <!-- Make one big h1 -->
