@@ -53,6 +53,12 @@
   @media screen(md) {
     height: initial;
   }
+  
+  @media screen(2xl) {
+    .sword {
+      width: 30rem;
+    }
+  }
 }
 
 .landing-features__inner {
@@ -81,6 +87,7 @@
   font-size: 1.2rem;
   padding: 0 theme(spacing.2);
   max-width: 100%;
+  overflow: hidden;
   position: relative;
   transform: translateY(-70px);
 
@@ -92,6 +99,10 @@
     strong {
       line-height: 1;
       font-weight: 700;
+    }
+    
+    &:last-child {
+      margin-bottom: 70px;
     }
   }
 
@@ -131,10 +142,14 @@
     
     li {
       opacity: 0;
+      
+      &:last-child {
+        margin-bottom: initial;
+      }
     }
 
     li.f-chance {
-      max-width: 520px;
+      max-width: 32rem;
 
       strong {
         font-size: 1.9rem;
@@ -157,7 +172,7 @@
     }
     li.f-insure {
       font-size: 1.9rem;
-      max-width: 620px;
+      max-width: 38rem;
       line-height: 1;
     }
   }

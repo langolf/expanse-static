@@ -49,6 +49,8 @@
     padding: 2rem;
     margin: auto;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
 
     &::before {
       content: '';
@@ -149,6 +151,12 @@
 
     li:nth-child(3) {
       height: 311px;
+    }
+  }
+  
+  @media screen(2xl) {
+    li {
+      width: 25%;
     }
   }
 }

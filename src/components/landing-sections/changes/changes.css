@@ -2,7 +2,7 @@
   position: relative;
 
   @media screen(md) {
-    margin-bottom: 100px;
+    margin-bottom: 180px;
   }
 }
 
@@ -10,8 +10,8 @@
   padding: 0;
 
   @media screen(md) {
-    padding-right: theme(spacing.14);
-    padding-left: theme(spacing.14);
+    padding-left: 3rem;
+    padding-right: 3rem;
     padding-top: theme(spacing.24);
     display: flex;
   }
@@ -23,6 +23,7 @@
   @media screen(md) {
     flex: 1 0 50%;
     width: 50%;
+    padding: 0;
   }
 }
 

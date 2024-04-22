@@ -12,25 +12,39 @@
   --colors-neutral: #F9F3DE;
   --colors-neutral2: #F1EEE4;
   --colors-green: #26B478;
+  
+  --inner: 100%;
+}
+
+@media screen(md) {
+  :root {
+    --inner: theme(size.inner.md);
+  }
+}
+
+@media screen(2xl) {
+  :root {
+    --inner: theme(size.inner.2xl);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  :root {
+    --inner: 1660px;
+  }
 }
 
 html {
-  --inner: 100%;
-  
-  @media screen(md) {
-    --inner: theme(size.inner.md);
-  }
-  
-  @media screen(2xl) {
-    --inner: theme(size.inner.2xl);
 
-    font-size: 20px;
-  }
-  
+ @media screen(2xl) {
+   font-size: 20px;
+ }
+
   @media screen and (min-width: 2000px) {
     font-size: 30px;
   }
 }
+
 
 body {
   background-color: theme('colors.ex.dark.900');
@@ -58,17 +72,9 @@ body:has(dialog[open]) {
 }
 
 .inner {
-  width: 100%;
+  width: var(--inner);
   margin: auto;
   position: relative;
-
-  @media screen(md) {
-    max-width: theme(size.inner.md);
-  }
-  
-  @media screen(2xl) {
-    max-width: theme(size.inner.2xl);
-  }
 }
 
 @define-mixin cl $size {
