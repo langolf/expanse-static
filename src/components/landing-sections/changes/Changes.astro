@@ -6,6 +6,55 @@ import imageShillenCard from './assets/shillen-card.png';
 import Button from '~/components/button/Button.astro';
 ---
 
+<script>
+  import anime from 'animejs/lib/anime.es.js';
+
+  var cards = document.querySelectorAll('.cards .card');
+
+  var cardsAnimation = anime.timeline({
+    targets: cards,
+    easing: 'easeOutQuad',
+    delay: 10,
+    endDelay: 10,
+    duration: 700,
+    autoPlay: false,
+    filter: ['blur(20px)', 'blur(0px)'],
+    // autoplay: false,
+    // delay: anime.stagger(100),
+  });
+
+  cardsAnimation
+    .add({
+      opacity: [0, 1],
+      targets: '.cards .card--eva',
+      rotate: ['0deg', '-14.85deg'],
+      scale: [3, 1],
+    })
+    .add(
+      {
+        opacity: [0, 1],
+        targets: '.cards .card.card--shillen',
+        rotate: [0, '9.34deg'],
+        translateY: -40,
+        scale: [2.5, 1],
+      },
+      '-=600'
+    );
+
+  const observer = new IntersectionObserver((entries) => {
+    // Loop over the entries
+    entries.forEach((entry) => {
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the animation class
+        cardsAnimation.play();
+      }
+    });
+  });
+
+  observer.observe(document.querySelector('.landing-changes'));
+</script>
+
 <section id="landing-changes" class="landing-changes">
   <div class="landing-changes__inner inner">
     <div class="landing-changes__info">
@@ -29,9 +78,9 @@ import Button from '~/components/button/Button.astro';
     <div class="landing-changes__cards">
       <div class="cards">
         {
-          [imageEvaCard, imageShillenCard].map((imgSrc) => (
-            <div class="card">
-              <Image src={imgSrc} alt="" />
+          ['eva', 'shillen'].map((el) => (
+            <div class:list={['card', { [`card--${el}`]: el }]}>
+              <Image src={el == 'eva' ? imageEvaCard : imageShillenCard} alt="" />
             </div>
           ))
         }

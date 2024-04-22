@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  --inner: 100%;
+  
+  @media screen(md) {
+    --inner: theme(size.inner.md);
+  }
+  
+  @media screen(2xl) {
+    --inner: theme(size.inner.2xl);
+  }
+}
+
 body {
   background-color: theme('colors.ex.dark.900');
   background-image: url('/src/assets/images/bg-pattern.png');
@@ -28,7 +41,11 @@ body {
   position: relative;
 
   @media screen(md) {
-    max-width: theme(size.inner);
+    max-width: theme(size.inner.md);
+  }
+  
+  @media screen(2xl) {
+    max-width: theme(size.inner.2xl);
   }
 }
 

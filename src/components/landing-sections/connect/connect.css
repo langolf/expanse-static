@@ -25,6 +25,7 @@
 }
 
 .landing-connect__header {
+  max-width: var(--inner);
   color: theme(colors.ex.dark.900);
   position: relative;
   padding: 1.4rem 1.4rem 0;
@@ -46,7 +47,6 @@
 
   @media screen(md) {
     padding: 2rem;
-    max-width: theme(size.inner);
     margin: auto;
     position: relative;
 

@@ -83,6 +83,7 @@
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  transform: translateY(-70px);
 
   li {
     font-weight: 400;
@@ -169,7 +170,6 @@
   display: flex;
 
   .button {
-    width: 100%;
     min-height: 4rem;
     font-size: 1.1rem;
   }
@@ -180,8 +180,6 @@
 
     .button {
       font-size: 1.4rem;
-      width: 496px;
-      height: 74px;
     }
   }
 }

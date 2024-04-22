@@ -91,31 +91,30 @@
 .card {
   flex: 1 0 auto;
   position: relative;
+  opacity: 0;
   filter: drop-shadow(24px 24px 44px rgba(0, 0, 0, 0.44));
+}
 
-  &:nth-child(1) {
-    width: 202.32px;
-    z-index: 2;
-    height: 289.84px;
-    transform: rotate(-14.85deg) translateX(-20px);
-  }
-
-  &:nth-child(2) {
-    z-index: 1;
-    width: 202.32px;
-    height: 289.84px;
-    transform: rotate(9.34deg) translateX(-60px) translateY(-40px);
-  }
-
+.card--eva {
+  width: 202.32px;
+  z-index: 2;
+  height: 289.84px;
+  transform: rotate(-14.85deg) translateX(-20px);
+  
   @media screen(md) {
-    &:nth-child(1) {
-      width: 215px;
-      height: 308px;
-    }
+    width: 215px;
+    height: 308px;
+  }
+}
 
-    &:nth-child(2) {
-      width: 215px;
-      height: 308px;
-    }
+.card--shillen {
+  z-index: 1;
+  width: 202.32px;
+  height: 289.84px;
+  transform: rotate(9.34deg) translateX(-60px) translateY(-40px);
+  
+  @media screen(md) {
+    width: 215px;
+    height: 308px;
   }
 }

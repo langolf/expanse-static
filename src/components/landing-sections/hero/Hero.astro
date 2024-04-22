@@ -6,6 +6,7 @@ import SvgOverSkull from './assets/shape-over.svg?raw';
 import logoSrc from '~/assets/images/symbol-vertical.svg';
 import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
+import Button from '../../button/Button.astro';
 const { rest } = Astro.props;
 ---
 
@@ -53,7 +54,7 @@ const { rest } = Astro.props;
         </div>
       </div>
 
-      <button class="hero__reg" type="button"> Регистрация </button>
+      <a href="/" class="button hero__reg">Регистрация</a>
     </div>
   </div>
 </section>

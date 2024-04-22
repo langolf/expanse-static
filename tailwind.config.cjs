@@ -21,9 +21,12 @@ module.exports = {
   theme: {
     extend: {
       size: {
-        inner: '1060px',
+        inner: {
+          md: '1060px',
+          '2xl': '1440px',
+        },
         toplineMaxHeight: '68px',
-        playerIconSize: '70px',
+        playerIconSize: '4.15rem',
       },
       fontSize: {
         xsm: '0.75rem',

@@ -1,13 +1,28 @@
+:root {
+  --button-bg-color: theme(colors.ex.neutral);
+  --button-text-color: theme(colors.ex.dark.900);
+}
+
 .button {
-  background: theme(colors.ex.neutral);
-  color: theme(colors.ex.dark.900);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button-bg-color);
+  color: var(--button-text-color);
   text-transform: uppercase;
   padding: theme(spacing.1) theme(spacing.3);
-  min-height: 40px;
   transition: all 0.2s ease-in;
   font-weight: 900;
+  line-height: 1;
+  width: 100%;
+  outline: 0rem solid var(--button-bg-color);
+  transition: outline-width 50ms ease-out;
 
   &:hover {
-    outline: 3px solid theme(colors.ex.neutral);
+    outline: 0.2rem solid var(--button-bg-color);
+  }
+  
+  @media screen(md) {
+    width: initial;
   }
 }

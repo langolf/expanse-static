@@ -6,7 +6,3 @@ const { text, size, ...rest } = Astro.props;
 <button type="button" class:list={['button', { [`button--size-${size}`]: size }]} {...rest}>
   <span class="button__text">{text}</span>
 </button>
-
-<style lang="postcss">
-
-</style>
