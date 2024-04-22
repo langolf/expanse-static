@@ -65,19 +65,24 @@
   .button {
     position: relative;
     z-index: 5;
+    width: initial;
   }
 }
 
 .landing-changes__cards {
   position: relative;
   display: flex;
-  min-height: 350px;
+  min-height: 390px;
   overflow: hidden;
-  padding-top: 40px;
+  padding-top: 80px;
+  transform: translateY(-90px);
 
   @media screen(md) {
     flex: 1 0 50%;
     width: 50%;
+    overflow: initial;
+    transform: initial;
+    padding-top: 0;
   }
 }
 
@@ -104,8 +109,8 @@
   transform: rotate(-14.85deg) translateX(-20px);
   
   @media screen(md) {
-    width: 215px;
-    height: 308px;
+    width: 12.625rem;
+    height: 19rem;
   }
 }
 
@@ -116,7 +121,7 @@
   transform: rotate(9.34deg) translateX(-60px) translateY(-40px);
   
   @media screen(md) {
-    width: 215px;
-    height: 308px;
+    width: 12.625rem;
+    height: 19rem;
   }
 }

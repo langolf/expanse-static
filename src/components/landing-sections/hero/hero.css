@@ -33,7 +33,7 @@
     background-color: transparent;
   }
   
-  img:not(.flame) {
+  img {
     object-fit: contain;
     position: absolute;
     top: 0;
@@ -55,10 +55,10 @@
   }
 
   @media screen(md) {
-    img:not(.flame) {
+    img {
       top: initial;
       right: 0;
-      height: 104vh;
+      height: 102vh;
       bottom: 0;
       transform: translate(31%,0);
     }
@@ -68,7 +68,7 @@
     }
   }
   
-  @media screen(2xl) {
+  @media screen and (min-width: 1600px) {
     img {
       object-fit: cover;
       transform: translate(20%,0);
@@ -258,5 +258,6 @@
   
   @media screen(md) {
     padding: 1.4rem 3.7rem;
+    line-height: 1;
   }
 }

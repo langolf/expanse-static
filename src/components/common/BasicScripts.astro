@@ -8,30 +8,31 @@
     {
       const Dialogs = document.querySelectorAll('dialog');
 
-      Dialogs.forEach(
-        (dial) =>
-          (dial.onOpen = function () {
-            if (dial.open) {
-              document.body.style.top = `-${window.scrollY}px`;
-              document.body.dataset.scrollY = window.scrollY;
-              // When the modal is shown, we want a fixed body
-              document.body.style.position = 'fixed';
-            }
-          })
-      ); // add onOpen empty method.
+      if (window.innerWidth < 700) {
+        Dialogs.forEach(
+          (dial) =>
+            (dial.onOpen = function () {
+              if (dial.open) {
+                document.body.style.top = `-${window.scrollY}px`;
+                document.body.dataset.scrollY = window.scrollY;
+                // When the modal is shown, we want a fixed body
+                document.body.style.position = 'fixed';
+              }
+            })
+        ); // add onOpen empty method.
 
-      const ObserverM = new MutationObserver((recs) => {
-        recs.forEach(({ attributeName: attr, target: dial }) => {
-          if (attr === 'open' && dial.open) {
-            dial.onOpen();
-          } else {
-            document.body.style.top = `0`;
-            window.scrollTo({ top: document.body.getAttribute('data-scroll-y') });
-            // When the modal is shown, we want a fixed body
-            document.body.style.position = '';
-          } // call onOpen Method...
+        const ObserverM = new MutationObserver((recs) => {
+          recs.forEach(({ attributeName: attr, target: dial }) => {
+            if (attr === 'open' && dial.open) {
+              dial.onOpen();
+            } else {
+              document.body.style.position = '';
+              document.body.style.top = `initial`;
+              window.scrollTo({ top: document.body.getAttribute('data-scroll-y') });
+            }
+          });
         });
-      });
-      Dialogs.forEach((dial) => ObserverM.observe(dial, { attributes: true }));
+        Dialogs.forEach((dial) => ObserverM.observe(dial, { attributes: true }));
+      }
     })(); // IIFE end...
 </script>

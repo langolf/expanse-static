@@ -4,7 +4,7 @@
 
 .landing-features {
   position: relative;
-  margin-top: 2.4rem;
+  margin-top: -2rem;
 
   @media screen(md) {
     padding-bottom: 5rem;
