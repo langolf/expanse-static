@@ -56,6 +56,11 @@
     flex-direction: row;
     max-width: 1440px;
   }
+
+  @media screen and (min-width: 1600px) {
+    flex-direction: row;
+    max-width: 100vw;
+  }
 }
 
 .topline__logo {
@@ -160,9 +165,12 @@
   align-items: center;
   padding-left: theme('spacing.4');
   padding-right: theme('spacing.4');
+  
+  @media screen(md) {
+    font-size: 0.8rem;
+  }
 
   @media screen(xl) {
-    font-size: 13px;
     white-space: nowrap;
     justify-content: center;
     padding-left: theme('spacing.2');

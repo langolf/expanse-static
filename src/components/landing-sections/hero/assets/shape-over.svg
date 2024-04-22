@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 598 1061">
-  <path fill="#EE2759" d="M229 0 0 1061h347l114-737c48-89 142-266 137-266H443L277 515 355 0H229Z" />
+<svg viewBox="0 0 337 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g style="mix-blend-mode:difference">
+    <path d="M229.119 -158L0 902.5H346.5L460.789 166C508.586 77.3333 602.904 -100 597.801 -100H442.929L276.575 356.5L354.649 -158H229.119Z" fill="#EE2759"/>
+  </g>
 </svg>

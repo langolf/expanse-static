@@ -10,16 +10,6 @@ import Button from '../../button/Button.astro';
 const { rest } = Astro.props;
 ---
 
-<script>
-  import Parallax from 'parallax-js';
-  var heroScene = document.getElementById('hero-scene');
-  var parallaxInstance = new Parallax(heroScene);
-
-  if (window.innerWidth < 700) {
-    parallaxInstance.destroy();
-  }
-</script>
-
 <section id="landing-hero" class="hero">
   <div class="hero__bg">
     <div id="hero-scene" class="layer">

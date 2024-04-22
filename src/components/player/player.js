@@ -70,9 +70,9 @@ export default class AudioPlayer {
 
   setPlay(state) {
     if (state == true) {
-      this.playerElem.classList.add('play');
+      this.playerElem.classList.add('is-playing');
     } else {
-      this.playerElem.classList.remove('play');
+      this.playerElem.classList.remove('is-playing');
     }
   }
 }

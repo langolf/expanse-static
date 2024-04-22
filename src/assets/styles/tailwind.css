@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --colors-firmcolor: #EE2759;
+  --colors-gold: #FFC530;
+  --colors-purple: #7327EE;
+  --colors-acidic: #CBCB15;
+  --colors-grey: #6A6373;
+  --colors-ice: #3581DB;
+  --colors-neutral: #F9F3DE;
+  --colors-neutral2: #F1EEE4;
+  --colors-green: #26B478;
+}
 
 html {
   --inner: 100%;
@@ -12,6 +23,12 @@ html {
   
   @media screen(2xl) {
     --inner: theme(size.inner.2xl);
+
+    font-size: 20px;
+  }
+  
+  @media screen and (min-width: 2000px) {
+    font-size: 30px;
   }
 }
 
@@ -25,6 +42,11 @@ body {
   @media screen(xl) {
     font-size: theme(fontSize.base);
   }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 .main {

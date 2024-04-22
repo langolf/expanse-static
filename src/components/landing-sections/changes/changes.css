@@ -1,15 +1,13 @@
 .landing-changes {
   position: relative;
-  overflow-x: hidden;
 
   @media screen(md) {
-    overflow-x: initial;
     margin-bottom: 100px;
   }
 }
 
 .landing-changes__inner {
-  padding: theme(spacing.6);
+  padding: 0;
 
   @media screen(md) {
     padding-right: theme(spacing.14);
@@ -20,6 +18,8 @@
 }
 
 .landing-changes__info {
+  padding: theme(spacing.6);
+  
   @media screen(md) {
     flex: 1 0 50%;
     width: 50%;
@@ -71,6 +71,9 @@
 .landing-changes__cards {
   position: relative;
   display: flex;
+  min-height: 350px;
+  overflow: hidden;
+  padding-top: 40px;
 
   @media screen(md) {
     flex: 1 0 50%;
@@ -80,9 +83,8 @@
 
 .cards {
   display: flex;
-  max-width: 100%;
-  min-width: auto;
-
+  height: 100%;
+  
   @media screen(md) {
     transform: translate(90px, 90px);
   }
@@ -90,7 +92,7 @@
 
 .card {
   flex: 1 0 auto;
-  position: relative;
+  position: absolute;
   opacity: 0;
   filter: drop-shadow(24px 24px 44px rgba(0, 0, 0, 0.44));
 }

@@ -1,22 +1,38 @@
 .player {
+  --player-bg: theme(colors.ex.firmcolor);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: theme(colors.ex.firmcolor);
+  background: var(--player-bg);
   position: relative;
   border-radius: 100%;
   cursor: pointer;
   @apply size-[4.15rem];
 
-  &:hover {
+  &:not(.is-playing):hover {
     outline: 4px solid theme(colors.ex.firmcolor);
     box-shadow: inset 0 0 0px 3px theme(colors.ex.firmcolor);
   }
 }
 
+.player__icon {
+  @apply size-[1.65rem];
+  color: var(--colors-neutral);
+  
+  [data-icon="pause"] {
+    display: none;
+  }
+}
+
+.player__label {
+  font-size: 0.62rem;
+  user-select: none;
+}
+
 .progress {
   position: absolute;
+  display: none;
   left: 0;
   top: 0;
   width: 100%;
@@ -33,13 +49,35 @@ circle-progress::part(base) {
   height: 100%;
 }
 circle-progress::part(value) {
-  stroke-width: 6px;
-  stroke: hsl(280, 90%, 50%);
-  stroke-linecap: round;
+  stroke-width: 3px;
+  stroke: var(--colors-neutral);
 }
 circle-progress::part(circle) {
-  stroke-width: 2px;
+  stroke-width: 3px;
+  stroke: var(--colors-neutral);
+  opacity: 0.1;
 }
-circle-progress::part(text) {
-  fill: hsl(39, 100%, 50%);
+
+.player.is-playing {
+  --player-bg: theme(colors.ex.dark.900);
+  
+  .progress {
+    display: block;
+  }
+  
+  .player__icon,
+  [data-icon="play"] {
+    display: none;
+  }
+  
+  &:hover {
+    .player__label {
+      display: none;
+    }
+    
+    .player__icon,
+    [data-icon="pause"] {
+      display: block;
+    }
+  }
 }

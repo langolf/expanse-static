@@ -15,10 +15,11 @@ import Icon from '../icon/Icon.astro';
 <div class="player">
   <circle-progress text-format="none" class="progress" value="0" max="100"></circle-progress>
   <div class="player__control">
-    <div class="player__icon pl-1 flex items-center justify-center size-[1.6rem]">
-      <Icon name="play" width="18px" height="22px" />
+    <div class="player__icon">
+      <Icon name="play" />
+      <Icon name="pause" />
     </div>
   </div>
 
-  <div class="player__label text-[0.66rem]">mp3</div>
+  <div class="player__label">mp3</div>
 </div>
