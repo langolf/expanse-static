@@ -99,6 +99,15 @@
   }
 }
 
+.topline__online-icon {
+  @apply size-[0.65rem];
+  margin-right: 0.1rem;
+}
+
+.topline__online-text {
+  font-size: 0.65rem;
+}
+
 .topline__toggle {
   position: absolute;
   cursor: pointer;
