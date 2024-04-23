@@ -306,8 +306,7 @@
   justify-content: center;
   align-items: center;
   padding: theme(spacing.3) theme(spacing.4);
-  min-height: 40px;
-  font-size: 14px;
+  font-size: 0.8rem;
   background: theme(colors.ex.neutral);
   color: theme(colors.ex.dark.900);
   font-weight: 900;
