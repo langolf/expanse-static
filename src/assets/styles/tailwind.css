@@ -12,7 +12,7 @@
   --colors-neutral: #F9F3DE;
   --colors-neutral2: #F1EEE4;
   --colors-green: #26B478;
-  
+
   --inner: 100%;
 }
 
@@ -35,10 +35,9 @@
 }
 
 html {
-
- @media screen(2xl) {
-   font-size: 20px;
- }
+  @media screen(2xl) {
+    font-size: 20px;
+  }
 
   @media screen and (min-width: 2000px) {
     font-size: 30px;

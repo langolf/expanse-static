@@ -15,6 +15,8 @@ const exColors = {
   green: '#26B478',
 };
 
+// We don't use tailwind in the end. Just tools from dev package.
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],

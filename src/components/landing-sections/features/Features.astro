@@ -8,8 +8,8 @@ import Button from '~/components/button/Button.astro';
   import Parallax from 'parallax-js';
   import anime from 'animejs/lib/anime.es.js';
 
-  var featuresScene = document.getElementById('features-scene');
-  var parallaxInstance = new Parallax(featuresScene, {
+  const featuresScene = document.getElementById('features-scene');
+  const parallaxInstance = new Parallax(featuresScene, {
     relativeInput: true,
     clipRelativeInput: true,
     calibrateX: true,
@@ -19,9 +19,9 @@ import Button from '~/components/button/Button.astro';
     parallaxInstance.destroy();
   }
 
-  var features = document.querySelectorAll('.landing-features__list li');
+  const features = document.querySelectorAll('.landing-features__list li');
 
-  var featuresAnimation = anime({
+  const featuresAnimation = anime({
     targets: features,
     opacity: 1,
     translateY: 70,
@@ -31,11 +31,8 @@ import Button from '~/components/button/Button.astro';
   });
 
   const observer = new IntersectionObserver((entries) => {
-    // Loop over the entries
     entries.forEach((entry) => {
-      // If the element is visible
       if (entry.isIntersecting) {
-        // Add the animation class
         featuresAnimation.play();
       }
     });
