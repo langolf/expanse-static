@@ -48,7 +48,7 @@ html {
 
 body {
   background-color: theme('colors.ex.dark.900');
-  background-image: url('/src/assets/images/bg-pattern.png');
+  background-image: url('/images/bg-pattern.png');
   color: theme('colors.ex.neutral');
 
   font-size: theme(fontSize.sm);
