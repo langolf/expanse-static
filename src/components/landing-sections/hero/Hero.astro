@@ -8,7 +8,10 @@ import Player from '~/components/player/Player.astro';
 <section id="landing-hero" class="hero">
   <div class="hero__bg" role="presentation">
     <div class="skull">
-      <img class="skull-img" src="/images/skull-fire.png" loading="lazy" decoding="async" alt="Skull" />
+      <picture>
+        <source srcset="/images/skull-fire.webp" type="image/webp" />
+        <img class="skull-img" src="/images/skull-fire.png" loading="lazy" decoding="async" alt="Skull" />
+      </picture>
 
       <svg class="skull-img" viewBox="0 0 1918 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect id="skull-flame-tracker" x="935" y="465" width="15" height="14" fill="none"></rect>
