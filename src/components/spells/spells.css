@@ -47,7 +47,7 @@
   @media screen(md) {
     display: block;
     min-width: auto;
-    flex: 1 0 355px;
+    flex: 1 0 22rem;
     font-size: 0.84rem;
     margin-right: 2rem;
   }

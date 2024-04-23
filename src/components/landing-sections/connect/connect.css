@@ -79,7 +79,14 @@
       right: 0;
       z-index: 1;
       width: 100vw;
-      max-width: 1243px;
+      max-width: 74rem;
+    }
+  }
+  
+  @media screen(2xl) {
+    svg {
+      top: 5rem;
+      max-width: 85vw;
     }
   }
 }
@@ -127,7 +134,7 @@
       padding: 0 1.4rem 1.4rem;
       gap: 1.4rem;
       width: 265px;
-      height: 269px;
+      height: 16rem;
       background: rgba(255, 255, 255, 0.03) !important;
       backdrop-filter: blur(12px);
     }
@@ -146,17 +153,18 @@
     }
 
     li:nth-child(2) {
-      height: 341px;
+      height: 21.3rem;
     }
 
     li:nth-child(3) {
-      height: 311px;
+      height: 19.4rem;
     }
   }
   
   @media screen(2xl) {
     li {
       width: 25%;
+      height: 17rem;
     }
   }
 }
@@ -179,4 +187,5 @@
       font-size: 1.41rem;
     }
   }
+  
 }

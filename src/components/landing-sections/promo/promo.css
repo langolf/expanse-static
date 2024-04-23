@@ -155,6 +155,12 @@
       max-width: 420px;
     }
   }
+  
+  @media screen(2xl) {
+    > span {
+      max-width: 20rem;
+    }
+  }
 }
 
 svg#svg-promo-title-align-center {

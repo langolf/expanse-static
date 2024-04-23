@@ -1,3 +1,16 @@
+@define-mixin footer-nav-hover {
+  opacity: 1;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
 .footer {
   background: #000;
   padding: 0.7rem;
@@ -97,6 +110,7 @@
 
   span {
     opacity: 0.4;
+    font-size: 0.6rem;
   }
 
   .logo-expanse {
@@ -132,6 +146,7 @@
     justify-content: center;
 
     li {
+      @mixin footer-nav-hover;
       opacity: 0.4;
       color: theme(colors.ex.neutral2);
       font-weight: 300;
@@ -174,6 +189,7 @@
   }
 
   li {
+    @mixin footer-nav-hover;
     font-size: 0.8rem;
     line-height: 1.1;
     text-align: center;
