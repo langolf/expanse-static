@@ -43,6 +43,7 @@
   @media screen(md) {
     .svg-top-mask {
       display: block;
+      max-width: 100%;
     }
     
     img {
