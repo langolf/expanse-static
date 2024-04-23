@@ -1,8 +1,6 @@
 ---
 import './changes.css';
 import Image from 'astro/components/Image.astro';
-import imageEvaCard from './assets/eva-card.png';
-import imageShillenCard from './assets/shillen-card.png';
 import Button from '~/components/button/Button.astro';
 ---
 
@@ -81,7 +79,12 @@ import Button from '~/components/button/Button.astro';
         {
           ['eva', 'shillen'].map((el) => (
             <div class:list={['card', { [`card--${el}`]: el }]}>
-              <Image src={el == 'eva' ? imageEvaCard : imageShillenCard} alt="" />
+              <img
+                loading="lazy"
+                decoding="auto"
+                src={el == 'eva' ? '/images/eva-card.png' : '/images/shillen-card.png'}
+                alt=""
+              />
             </div>
           ))
         }

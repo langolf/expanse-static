@@ -1,11 +1,6 @@
 ---
 import './features.css';
-import Image from 'astro/components/Image.astro';
-import imageSword from '~/assets/images/sword.png';
-import imageSplash from '~/assets/images/sword-splash.png';
-import SvgRadialGradient from '~/assets/images/radial-gradient.svg';
-import imageSwordWithSplash from '~/assets/images/sword-with-splash.png';
-import imageFeaturesTitleSvgRu from './assets/features-ru.svg';
+import imageFeaturesTitleSvgRu from './assets/features-ru.svg?raw';
 import Button from '~/components/button/Button.astro';
 ---
 
@@ -49,21 +44,29 @@ import Button from '~/components/button/Button.astro';
 </script>
 
 <section id="landing-features" class="landing-features">
-  <div id="features-scene" class="landing-features__bg hidden md:block">
-    <Image data-depth="0.1" class="splash" src={imageSplash} alt="" />
+  <div id="features-scene" class="landing-features__bg hidden md:block" role="presentationq">
+    <img
+      data-depth="0.1"
+      class="splash"
+      src="/images/sword-splash.png"
+      loading="lazy"
+      decoding="async"
+      width="942"
+      height="876"
+      alt=""
+    />
     <div data-depth="0.02" class="layer">
-      <Image class="gradient" src={SvgRadialGradient} alt="" />
+      <img class="gradient" src="/images/radial-gradient.svg" width="1090" height="1089" alt="" />
     </div>
     <div data-depth="0.2" class="layer">
-      <Image class="sword" src={imageSword} alt="" />
+      <img class="sword" src="/images/sword.png" loading="lazy" decoding="async" width="575" height="995" alt="" />
     </div>
-    <!-- <Image class="sword" src={imageSwordWithSplash} alt="" /> -->
   </div>
 
   <div class="landing-features__inner inner">
     <div class="landing-features__header" aria-label="title">
       <h1>Особенности</h1>
-      <Image src={imageFeaturesTitleSvgRu} alt="Особенности" />
+      <Fragment set:html={imageFeaturesTitleSvgRu} />
     </div>
 
     <ul class="landing-features__list">

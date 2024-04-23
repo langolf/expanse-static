@@ -77,6 +77,12 @@
     height: 0;
     overflow: hidden;
   }
+  
+  svg {
+    max-width: 100%;
+    width: 100%;
+    display: inline-block;
+  }
 
   @media screen(md) {
     margin-bottom: theme(spacing.10);

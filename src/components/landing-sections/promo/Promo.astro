@@ -1,51 +1,16 @@
 ---
-import { Image } from 'astro:assets';
-import imageVideoPlaceholder from '~/assets/images/video-placeholder.jpg';
 import SvgPromoTitleAlignLeft from './assets/promo-title-align-left.svg?raw';
 import SvgPromoTitleAlignCenter from './assets/promo-title-align-center.svg?raw';
 import SvgPromoPlayBg from './assets/promo-play-bg.svg?raw';
+import SvgPromoTopMask from './assets/promo-top-mask.svg?raw';
 import Icon from '~/components/icon/Icon.astro';
 import './promo.css';
 ---
 
 <section class="landing-promo" id="landing-promo">
   <div class="landing-promo__placeholder">
-    <Image src={imageVideoPlaceholder} alt="" ' />
-    <svg
-      class="svg-top-mask"
-      viewBox="0 0 1920 49"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <g clip-path="url(#clip0_1_9)">
-        <rect width="1920" height="49" fill="url(#pattern0_1_9)" fill-opacity="0.06"></rect>
-        <path
-          d="M27.59 42.8651L-1.38287e-06 32.2288L-4.1963e-06 0.0469551L1920 0.0467873L1920 21.0468L1903.44 27.5923L1878.36 32.2286L1784.54 21.0468L1709.79 21.0468L1654.6 37.4105L1597.91 27.5923L1384.19 32.2286L1368.63 42.865L1342.54 32.2286L1190.53 27.5924L1144.88 21.0469L1136.85 48.0469L1124.31 27.5924L1081.66 37.4106L1028.98 42.865L888.01 32.2287L810.74 32.2287L755.56 37.4106L704.38 21.0469L668.26 48.0469L524.78 32.2287L418.42 32.2287L343.66 37.4106L334.13 42.8651L212.72 27.5924L212.72 37.4106L27.59 42.8651Z"
-          fill="#100E13"></path>
-        <path
-          d="M27.59 42.8651L-1.38287e-06 32.2288L-4.1963e-06 0.0469551L1920 0.0467873L1920 21.0468L1903.44 27.5923L1878.36 32.2286L1784.54 21.0468L1709.79 21.0468L1654.6 37.4105L1597.91 27.5923L1384.19 32.2286L1368.63 42.865L1342.54 32.2286L1190.53 27.5924L1144.88 21.0469L1136.85 48.0469L1124.31 27.5924L1081.66 37.4106L1028.98 42.865L888.01 32.2287L810.74 32.2287L755.56 37.4106L704.38 21.0469L668.26 48.0469L524.78 32.2287L418.42 32.2287L343.66 37.4106L334.13 42.8651L212.72 27.5924L212.72 37.4106L27.59 42.8651Z"
-          fill="url(#pattern1_1_9)"
-          fill-opacity="0.06"></path>
-      </g>
-      <defs>
-        <pattern id="pattern0_1_9" patternContentUnits="objectBoundingBox" width="0.0166667" height="0.653061">
-          <use xlink:href="#image0_1_9" transform="scale(0.000520833 0.0204082)"></use>
-        </pattern>
-        <pattern id="pattern1_1_9" patternContentUnits="objectBoundingBox" width="0.0166667" height="0.666666">
-          <use xlink:href="#image0_1_9" transform="scale(0.000520833 0.0208333)"></use>
-        </pattern>
-        <clipPath id="clip0_1_9">
-          <rect width="1920" height="49" fill="white"></rect>
-        </clipPath>
-        <image
-          id="image0_1_9"
-          width="32"
-          height="32"
-          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA0RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAxIDc5LjE0NjI4OTk3NzcsIDIwMjMvMDYvMjUtMjM6NTc6MTQgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyNS4yICgyMDIzMTEwMS5tLjIzODUgMzhiYjJkMykgIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFCRThDNjgzNzRGNjExRUU5MUI2REQ1NzVBRDE3NzA1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFCRThDNjg0NzRGNjExRUU5MUI2REQ1NzVBRDE3NzA1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUJFOEM2ODE3NEY2MTFFRTkxQjZERDU3NUFEMTc3MDUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUJFOEM2ODI3NEY2MTFFRTkxQjZERDU3NUFEMTc3MDUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4q77TVAAAAOklEQVR42uzQwQkAMAwDsaR0/5Vd6BLJQ7eAhTtJDfWHTw13B7d7xQMAAAAAAAAAAAAAAAAAAE+AAQAC3gQ/V12u4wAAAABJRU5ErkJggg=="
-        />
-      </defs>
-    </svg>
+    <img src="/images/video-placeholder.jpg" loading="lazy" decoding="sync" alt="" />
+    <Fragment set:html={SvgPromoTopMask} />
   </div>
 
   <div class="landing-promo__inner inner js-promo-play">

@@ -1,23 +1,20 @@
 ---
 import './updates.css';
 import Image from 'astro/components/Image.astro';
-import imageColdEffectSrc from './assets/cold-effect.png';
-import imageSpiritSrc from './assets/spirit.png';
-import imageTemplarSrc from './assets/templar.png';
 
 const list = [
   {
     id: 'spirit',
     title: 'Дух',
     ctaText: 'Посмотреть умения',
-    imgSrc: imageSpiritSrc,
+    imgSrc: '/images/spirit.png',
     text: `Дух - это маг Высших Эльфов, который использует пламенную, морозную, природную магию и магию света. Может экипировать только двуручное магическое дробящее оружие, и когда экипирует его, внешность автоматически меняется в Сферу Духа, которая может использовать разную магию. Может экипировать только символ.`,
   },
   {
     id: 'templar',
     title: 'Священный Храмовник',
     ctaText: 'Посмотреть умения',
-    imgSrc: imageTemplarSrc,
+    imgSrc: '/images/templar.png',
     text: `Воин, использующий мощную силу света и обладающий характеристиками классов Воин и Рыцарь.
   Броня не может быть снята, т.к. её нужно поддерживать, чтобы контролировать силу света. Внешний вид не меняется даже при использовании эффектов трансформаций.`,
   },
@@ -26,7 +23,7 @@ const list = [
 
 <section id="landing-updates" class="landing-updates">
   <div class="landing-updates__bg">
-    <Image src={imageColdEffectSrc} alt="" />
+    <img src="/images/cold-effect.png" width="1377" height="900" loading="lazy" decoding="auto" alt="" />
   </div>
 
   <div class="landing-updates__inner inner">
@@ -51,7 +48,7 @@ const list = [
         list.map(({ title, id, ctaText, imgSrc, text }) => (
           <div class:list={['new-race__item', { [`${id}`]: id }]} id={id}>
             <div class="new-race__media">
-              <Image class="new-race__image" src={imgSrc} alt="" />
+              <img class="new-race__image" loading="lazy" decoding="sync" src={imgSrc} alt="" />
             </div>
 
             <div class="new-race__cta">

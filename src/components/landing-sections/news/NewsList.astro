@@ -1,35 +1,32 @@
 ---
-import { Image, Picture } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-const images = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/news/*.{jpeg,jpg,png,gif}');
 const articles = [
   {
     date: '27.10.2023',
     category: 'Обновления',
     title: 'Улучшение Невероятного Кристалла Адена Оружие/ Доспех',
     link: '/',
-    image: '/src/assets/images/news/1.jpg',
+    image: '/images/news/1.jpg',
   },
   {
     date: '27.10.2023',
     category: 'Акции',
     title: '27.10-10.11 Утерянные сокровища Камаради',
     link: '/',
-    image: '/src/assets/images/news/2.jpg',
+    image: '/images/news/2.jpg',
   },
   {
     date: '27.10.2023',
     category: 'Акции',
     title: 'Атака гигантов на Эльмораден',
     link: '/',
-    image: '/src/assets/images/news/3.jpg',
+    image: '/images/news/3.jpg',
   },
   {
     date: '27.10.2023',
     category: 'Акции',
     title: 'Атака гигантов на Эльмораден',
     link: '/',
-    image: '/src/assets/images/news/4.jpg',
+    image: '/images/news/4.jpg',
   },
 ];
 
@@ -66,7 +63,7 @@ const { type, ...rest } = Astro.props;
     articles.map(({ date, category, title, link, image }) => (
       <a href="/" class="news-article js-news-article">
         <div class="news-article__media">
-          <Image class="news-article__image" src={images[`${image}`]()} alt="" />
+          <img loading="lazy" decoding="async" class="news-article__image" src={image} alt="" />
           <div class="news-article__date">{date}</div>
           <div class="news-article__category">
             <span class="news-article__category-text">{category}</span>

@@ -1,13 +1,6 @@
 ---
 import './footer.css';
-import { Image } from 'astro:assets';
-import Icon from '~/components/icon/Icon.astro';
 import Messengers from '~/components/messengers/Messengers.astro';
-import logoSrc from '~/assets/images/logo-expanse.svg';
-import discordImage from '/src/assets/images/discord-widget.png';
-import lastSamuraiLogoSrc from '~/assets/images/last-samurai-logo.png';
-
-const paymentLogos = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/payment-logos/*.{jpeg,jpg,png,svg}');
 
 const footerNav = [
   { text: 'О сервере', href: '/' },
@@ -38,11 +31,19 @@ const footerNav = [
           <Messengers />
         </div>
 
-        <div class="footer-extra__misc">
+        <div class="footer-extra__misc" role="presentation">
           <div class="footer-extra__logo">
-            <Image class="logo-expanse" src={logoSrc} alt="logo" />
+            <img class="logo-expanse" src="/images/logo-expanse.svg" alt="Expanse logo" />
             <span>by</span>
-            <Image class="logo-samurai" src={lastSamuraiLogoSrc} alt="" />
+            <img
+              class="logo-samurai"
+              src="/images/last-samurai-logo.png"
+              width="104"
+              height="28"
+              loading="lazy"
+              decoding="async"
+              alt=""
+            />
           </div>
 
           <div class="footer-extra__nav">
@@ -58,14 +59,6 @@ const footerNav = [
           </div>
 
           <div class="footer-extra__terms">
-            <div class="footer-extra__providers">
-              {
-                ['mastercard', 'visa', 'paypal', 'g2a'].map((id) => (
-                  <Image src={paymentLogos[`/src/assets/images/payment-logos/${id}.svg`]()} alt="" />
-                ))
-              }
-            </div>
-
             <ul>
               <li><a href="/terms">Правила и условия</a></li>
               <li><a href="/privacy">Политика конфиденциальности</a></li>
@@ -82,7 +75,7 @@ const footerNav = [
 
       <div class="footer-extra__right">
         <div class="discord-widget">
-          <Image class="w-full" src={discordImage} alt="" />
+          <img class="w-full" src="/images/discord-widget.png" alt="" />
         </div>
       </div>
     </div>

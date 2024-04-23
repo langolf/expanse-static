@@ -270,6 +270,7 @@
   --button-text-color: theme(colors.ex.dark.900);
   margin-top: auto;
   font-size: 1.4rem;
+  padding: 1.1rem 3.7rem;
   
   @media screen(md) {
     padding: 1.4rem 3.7rem;

@@ -1,8 +1,5 @@
 ---
 import './spells.css';
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-const images = import.meta.glob<{ default: ImageMetadata }>('~/assets/images/spells/**/*.{jpeg,jpg,png,gif}');
 const { type, align, title, intro, list } = Astro.props;
 ---
 
@@ -48,7 +45,7 @@ const { type, align, title, intro, list } = Astro.props;
                 role="tab"
                 aria-controls={`spell-${spell.id}-tab-pane`}
               >
-                <Image inferSize={true} src={images[`${spell.img}`]()} alt="" />
+                <img src={spell.img} width="280" height="280" loading="lazy" decoding="async" alt={`${spell.title}`} />
               </button>
             </li>
           ))

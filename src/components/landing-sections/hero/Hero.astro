@@ -2,10 +2,7 @@
 import './hero.css';
 import SvgOverSkull from './assets/shape-over.svg?raw';
 import Logo from './assets/symbol-vertical.svg?raw';
-import Icon from '~/components/icon/Icon.astro';
 import Player from '~/components/player/Player.astro';
-import Button from '../../button/Button.astro';
-const { rest } = Astro.props;
 ---
 
 <section id="landing-hero" class="hero">
@@ -16,7 +13,6 @@ const { rest } = Astro.props;
       <svg class="skull-img" viewBox="0 0 1918 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect id="skull-flame-tracker" x="935" y="465" width="15" height="14" fill="none"></rect>
       </svg>
-
       <video autoplay loop muted playsinline class="skull-flame" preload="auto">
         <source src="/images/fire_best_VP9.webm" type="video/webm" />
       </video>
