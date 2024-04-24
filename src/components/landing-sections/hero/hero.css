@@ -109,6 +109,10 @@
     gap: 3.7rem;
     padding-top: 0;
   }
+  
+  @media screen(xl) {
+    transform: translateX(1rem);
+  }
 }
 
 .hero__logo {

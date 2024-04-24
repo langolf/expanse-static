@@ -94,8 +94,13 @@
   @media screen(xl) {
     flex-direction: column;
     justify-content: center;
-    padding-left: theme('spacing.4');
-    padding-right: theme('spacing.4');
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media screen(2xl) {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
   }
 }
 
@@ -207,6 +212,13 @@
       @mixin topline-hover theme(colors.ex.firmcolor), rgb(238, 39, 89, 0.3);
 
       .link {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+    }
+    
+    @media screen(2xl) {
+      .link {
         padding-left: theme('spacing.4');
         padding-right: theme('spacing.4');
       }
@@ -262,8 +274,16 @@
 
     .link {
       justify-content: center;
-      padding-left: theme('spacing.4');
-      padding-right: theme('spacing.4');
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+    }
+  }
+
+  @media screen(2xl) {
+    .link {
+      justify-content: center;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
     }
   }
 }
@@ -299,10 +319,15 @@
   height: 100%;
   width: 100%;
 
-  @media screen(xl) {
+  @media screen(md) {
     @mixin topline-hover rgb(40, 35, 47, 0.5), rgb(40, 35, 47, 0.2);
-    padding-left: theme('spacing.6');
-    padding-right: theme('spacing.6');
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media screen(xl) {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
 }
 

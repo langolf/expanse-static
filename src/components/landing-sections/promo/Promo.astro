@@ -10,6 +10,17 @@ import './promo.css';
 <section class="landing-promo" id="landing-promo">
   <div class="landing-promo__placeholder">
     <img src="/images/video-placeholder.jpg" loading="lazy" decoding="sync" alt="" />
+    <video
+      preload="auto"
+      playsinline
+      loop
+      autoplay
+      muted
+      poster="/images/video-placeholder.jpg"
+      class="landing-promo__video"
+    >
+      <source src="/images/promo-bg.webm" type="video/webm" />
+    </video>
     <Fragment set:html={SvgPromoTopMask} />
   </div>
 
