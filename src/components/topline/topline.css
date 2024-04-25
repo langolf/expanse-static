@@ -94,13 +94,13 @@
   @media screen(xl) {
     flex-direction: column;
     justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: rfs(1rem);
+    padding-right: rfs(1rem);
   }
-  
+
   @media screen(2xl) {
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
+    padding-left: rfs(1.2rem);
+    padding-right: rfs(1.2rem);
   }
 }
 

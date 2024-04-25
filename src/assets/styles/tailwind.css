@@ -37,10 +37,11 @@
 html {
   @media screen(2xl) {
     font-size: 19px;
+    overflow-x: hidden;
   }
 
   @media screen and (min-width: 2000px) {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
