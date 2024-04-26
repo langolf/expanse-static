@@ -3,7 +3,6 @@ import '@fontsource-variable/unbounded';
 import Footer from '../components/footer/Footer.astro';
 import Button from '~/components/button/Button.astro';
 import '../../src/assets/styles/tailwind.css';
-import CustomStyles from '../components/CustomStyles.astro';
 import BasicScripts from '../components/common/BasicScripts.astro';
 import LandingDiaglos from '~/components/common/LandingDialogs.astro';
 
@@ -11,15 +10,20 @@ import LandingDiaglos from '~/components/common/LandingDialogs.astro';
 const { hasFooter = true } = Astro.props;
 ---
 
-<!doctype html>
-<!-- todo: should add class 2xl:text-[20px] -->
+<script>
+  import { isSafari } from '@braintree/browser-detection';
+
+  if (isSafari()) {
+    document.documentElement.classList.add('is-safari');
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
-    <CustomStyles />
   </head>
 
   <!-- todo: should add class tracking-tight for letter spacing -->

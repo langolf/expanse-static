@@ -1,5 +1,5 @@
 ---
-// cins
+
 ---
 
 <script is:inline>
@@ -39,6 +39,11 @@
 
       jsPromoPlay.addEventListener('click', () => {
         modal_promo.showModal();
+        promoYoutubeEl.setAttribute('src', `${promoYoutubeEl.getAttribute('src')}&autoplay=0`);
+      });
+
+      // Stop youtube video when modal is closed
+      document.getElementById('modal_promo').addEventListener('close', () => {
         promoYoutubeEl.setAttribute('src', `${promoYoutubeEl.getAttribute('src')}&autoplay=0`);
       });
 
