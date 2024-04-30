@@ -17,6 +17,12 @@
   @media screen(md) {
     flex-direction: row;
   }
+  
+  @media screen(xl) {
+    &:nth-child(3) {
+      gap: 1rem;
+    }
+  }
 }
 
 .promo-features__item {
@@ -45,6 +51,7 @@
   @media screen(md) {
     flex: 0 1 20%;
   }
+  
 }
 
 .promo-features__icon {
@@ -121,4 +128,5 @@
   text-transform: uppercase;
   transform: translate(-50%, -100%);
   color: theme(colors.ex.gold);
+  letter-spacing: 0.1em;
 }

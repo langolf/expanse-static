@@ -6,9 +6,32 @@
   padding: 0.4rem;
   background: rgb(249, 243, 222, 0);
   transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    bottom: 0;
+    background-color: theme(colors.ex.acidic);
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.2345 5.36382L16.7658 3.88622L7.48098 13.1148L3.23428 8.89592L1.76599 10.3739L7.48135 16.0518L18.2345 5.36382Z' fill='%23100E13'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: all 0.2s ease-in-out;
+  }
   
   &:hover {
     background: rgb(249, 243, 222, 0.12);
+  }
+  
+  &:active,
+  &:visited {
+    
+    &::after{
+      opacity: 1;
+    }
   }
 }
 

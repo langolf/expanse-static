@@ -292,10 +292,25 @@
 
 .hero__footer {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
   
-  .button + .button {
-    margin-left: 0.6rem;
+  @media screen(md) {
+    width: auto;
+    align-items: flex-start;
+    flex-direction: row;
+
+    .button + .button {
+      margin-left: 0.6rem;
+    }
+  }
+}
+
+.hero__download {
+  width: 100%;
+  
+  @media screen(md) {
+    width: auto;
   }
 }
 
@@ -347,6 +362,18 @@
       .opening {
         &::before {
           width: 106%;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+  }
+  
+  @media screen(xl) {
+    .hero__info {
+      .opening {
+        &::before {
+          width: 110%;
+          height: 120px;
           transform: translate(-50%, 0);
         }
       }
