@@ -1,0 +1,24 @@
+.download-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid rgb(249, 243, 222, 0.3);
+  padding: 0.4rem;
+  background: rgb(249, 243, 222, 0);
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    background: rgb(249, 243, 222, 0.12);
+  }
+}
+
+.download-link__icon {
+  @apply size-[2.4rem];
+  margin-right: 0.9rem;
+}
+
+.download-link__title {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 600;
+}

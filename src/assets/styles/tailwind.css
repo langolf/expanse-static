@@ -64,7 +64,6 @@ body:has(dialog[open]) {
 }
 
 .main {
-  position: relative;
 
   @media screen(md) {
     padding-top: 0;
@@ -72,11 +71,53 @@ body:has(dialog[open]) {
 }
 
 .inner {
-  width: var(--inner);
+  max-width: var(--inner);
   margin: auto;
+  width: 100%;
   position: relative;
 }
 
 @define-mixin cl $size {
   font-size: clamp($size, calc($size + (1.25 - 1.125) * ((100vw - 20rem) / (96 - 20))), $size);
+}
+
+.page-promo {
+  --updates-topline-height: 4.2rem;
+  
+  @media screen(md) {
+    .landing-updates {
+      margin-top: calc(-1 * var(--updates-topline-height));
+    }
+
+    .landing-updates__topline {
+      @media screen(md) {
+        width: initial;
+        height: var(--updates-topline-height);
+      }
+    }
+  }
+}
+
+
+.tooltip {
+  background: theme(colors.ex.dark.900);
+  box-shadow: 4px 4px 0px theme(colors.ex.firmcolor);
+  border: 1px solid theme(colors.ex.firmcolor);
+  font-size: 0.8rem;
+  max-width: 300px;
+  z-index: 999;
+  
+  @media screen(xl) {
+    max-width: 18rem;
+  }
+}
+
+.tooltip-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0C0 0 17.5 6 24 24C15.452 16.088 7.467 8.062 0 0ZM24 13.577C20.798 2.205 9.964 0 9.964 0C14.307 4.884 18.994 9.4 24 13.577ZM0 9C4.703 14.228 9.716 19.218 15 24C11.115 11.615 0 9 0 9Z' fill='%23EE2759'/%3E%3C/svg%3E%0A");
+  width: 24px;
+  height: 24px;
+}
+
+.tooltip-inner {
+  padding: 0.8rem 1.1rem;
 }

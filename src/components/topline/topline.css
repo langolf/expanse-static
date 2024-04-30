@@ -400,3 +400,26 @@
     display: block;
   }
 }
+
+.topline--promo {
+  .topline__reg,
+  .topline__login,
+  .topline__online {
+    display: none;
+  }
+  
+  .topline__nav {
+    flex: 0 1 auto;
+    border: 0;
+  }
+  
+  .topline__nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .topline__lang {
+    margin-left: auto;
+    border-left: 1px solid theme(colors.ui.separator);
+  }
+}

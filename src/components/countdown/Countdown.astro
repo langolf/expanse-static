@@ -1,0 +1,75 @@
+---
+import './countdown.css';
+---
+
+<script>
+  const countDownClock = (number = 100, format = 'seconds') => {
+    const d = document;
+    const daysElement = d.querySelector('.countdown__days');
+    const hoursElement = d.querySelector('.countdown__hours');
+    const minutesElement = d.querySelector('.countdown__minutes');
+    const secondsElement = d.querySelector('.countdown__seconds');
+    let countdown;
+    convertFormat(format);
+
+    function convertFormat(format) {
+      switch (format) {
+        case 'seconds':
+          return timer(number);
+        case 'minutes':
+          return timer(number * 60);
+        case 'hours':
+          return timer(number * 60 * 60);
+        case 'days':
+          return timer(number * 60 * 60 * 24);
+      }
+    }
+
+    function timer(seconds) {
+      const now = Date.now();
+      const then = now + seconds * 1000;
+
+      countdown = setInterval(() => {
+        const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+        if (secondsLeft <= 0) {
+          clearInterval(countdown);
+          return;
+        }
+
+        displayTimeLeft(secondsLeft);
+      }, 1000);
+    }
+
+    function displayTimeLeft(seconds) {
+      daysElement.textContent = Math.floor(seconds / 86400);
+      hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
+      minutesElement.textContent = Math.floor(((seconds % 86400) % 3600) / 60);
+      secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
+    }
+  };
+  const targetDate = new Date('2024-05-02T23:59:59');
+  const currentDate = new Date();
+  const timeDifference = targetDate.getTime() - currentDate.getTime();
+  const totalSeconds = Math.floor(timeDifference / 1000);
+  countDownClock(totalSeconds, 'seconds');
+</script>
+
+<div class="countdown js-countdown">
+  <div class="countdown__item">
+    <span class="countdown__value countdown__days">24</span>
+    <span class="countdown__label">дней</span>
+  </div>
+  <div class="countdown__item">
+    <span class="countdown__value countdown__hours">18</span>
+    <span class="countdown__label">часов</span>
+  </div>
+  <div class="countdown__item">
+    <span class="countdown__value countdown__minutes">32</span>
+    <span class="countdown__label">минут</span>
+  </div>
+  <div class="countdown__item">
+    <span class="countdown__value countdown__seconds">41</span>
+    <span class="countdown__label">секунд</span>
+  </div>
+</div>

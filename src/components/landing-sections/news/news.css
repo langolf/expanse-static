@@ -127,12 +127,7 @@
 .landing-news__articles {
   --news-article-accent-color: theme(colors.ex.firmcolor);
 
-  overflow-y: scroll;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
+  width: 100vw;
   padding-left: 0.7rem;
 
   &.type-promos {
@@ -148,14 +143,24 @@
   }
 
   &.type-events {
-    --news-article-accent-color: theme(colors.ex.ice);
+    --news-article-accent-color: theme(colors.ex.ice);  
   }
 
+  @media screen(md) {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.landing-news__articles-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  overflow-x: scroll;
+  
   @media screen(md) {
     gap: 2.4rem;
     overflow-y: initial;
     overflow-x: hidden;
-    padding-bottom: 0.5rem;
   }
 }
 

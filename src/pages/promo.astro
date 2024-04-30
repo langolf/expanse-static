@@ -1,0 +1,19 @@
+---
+// Component Imports
+import Layout from '../layouts/Layout.astro';
+import Topline from '~/components/topline/Topline.astro';
+import Hero from '~/components/promo-sections/hero/Hero.astro';
+import Updates from '~/components/landing-sections/updates/Updates.astro';
+import Changes from '~/components/landing-sections/changes/Changes.astro';
+import Features from '~/components/promo-sections/features/Features.astro';
+import Files from '~/components/promo-sections/files/Files.astro';
+---
+
+<Layout type="promo">
+  <Topline type="promo" isClosed={true} />
+  <Hero />
+  <Updates />
+  <Changes />
+  <Features />
+  <Files />
+</Layout>

@@ -1,0 +1,95 @@
+---
+import './promo-features.css';
+import Icon from '../icon/Icon.astro';
+
+const promoFeaturesList = [
+  {
+    title: 'Путь Самурая',
+    isNew: true,
+    tooltip:
+      'Путь Самурая — это переработая цепочка квестов, дополнительные ежедневные задания и билет на мировой рынок',
+  },
+  { title: 'Гарантированая<br/>Модификация', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Особая сисема<br/>зачистки', isNew: true, tooltip: 'New tooltip' },
+  { title: 'Рейтинг амуниции<br/>героя', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Территориальные<br/>Войны', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Клановая система', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Олимпиада', isNew: true, tooltip: 'New tooltip' },
+  { title: 'Система Синергии', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Уникальные Осады', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Ивент 7 печатей', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Легальная Торговля<br/>RMT', isNew: false, tooltip: 'New tooltip' },
+  { title: 'Одно окно клиента<br/>на одном ПК', isNew: false, tooltip: 'New tooltip' },
+];
+---
+
+<script>
+  import { Tooltip } from 'bootstrap';
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
+</script>
+
+<div class="promo-features">
+  <ul class="promo-features__list">
+    {
+      [...promoFeaturesList.slice(0, 5)].map((feature, index) => (
+        <li
+          class="promo-features__item"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title={feature.tooltip}
+        >
+          <div class="promo-features__icon">
+            <img class="icon" src={`/images/promo-features-${index + 1}.svg`} alt="" />
+          </div>
+          <div class="promo-features__header">
+            {feature.isNew && <span class="promo-features__new">Новое</span>}
+
+            <h4 class="promo-features__title">
+              <Fragment set:html={feature.title} />
+            </h4>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <ul class="promo-features__list">
+    {
+      [...promoFeaturesList.slice(5, 9)].map((feature, index) => (
+        <li class="promo-features__item" data-bs-toggle="tooltip">
+          <div class="promo-features__icon">
+            <img class="icon" src={`/images/promo-features-${index + 6}.svg`} alt="" />
+          </div>
+          <div class="promo-features__header">
+            {feature.isNew && <span class="promo-features__new">Новое</span>}
+
+            <h4 class="promo-features__title">
+              <Fragment set:html={feature.title} />
+            </h4>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <ul class="promo-features__list">
+    {
+      [...promoFeaturesList.slice(9, 12)].map((feature, index) => (
+        <li class="promo-features__item" data-bs-toggle="tooltip">
+          <div class="promo-features__icon">
+            <img class="icon" src={`/images/promo-features-${index + 10}.svg`} alt="" />
+          </div>
+          <div class="promo-features__header">
+            {feature.isNew && <span class="promo-features__new">Новое</span>}
+
+            <h4 class="promo-features__title">
+              <Fragment set:html={feature.title} />
+            </h4>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

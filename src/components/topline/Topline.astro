@@ -10,9 +10,10 @@ import ToplineLogo from './ToplineLogo.astro';
 
 export interface Props {
   isClosed?: boolean;
+  type?: string;
 }
 
-const { isClosed } = Astro.props;
+const { isClosed, type } = Astro.props;
 ---
 
 <script>
@@ -32,7 +33,7 @@ const { isClosed } = Astro.props;
   const dropdownList = [...dropdownElementList].map((dropdownToggleEl) => new Dropdown(dropdownToggleEl));
 </script>
 
-<header data-aw-topline class:list={['topline', { ['is-closed']: isClosed }]}>
+<header data-aw-topline class:list={['topline', { ['is-closed']: isClosed }, { [`topline--${type}`]: type }]}>
   <div class="topline__desktop hidden xl:block">
     <div class="topline__inner container mx-auto">
       <ToplineLogo />

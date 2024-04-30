@@ -45,10 +45,12 @@
 
     @media screen(md) {
       flex-direction: row;
+      font-weight: 300;
       font-size: theme(fontSize.3xl);
 
       strong {
         display: inline-block;
+        font-weight: 700;
         margin-left: theme(spacing.1);
       }
     }

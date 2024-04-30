@@ -7,7 +7,7 @@ import BasicScripts from '../components/common/BasicScripts.astro';
 import LandingDiaglos from '~/components/common/LandingDialogs.astro';
 
 // import BasicScripts from '~/components/common/BasicScripts.astro';
-const { hasFooter = true } = Astro.props;
+const { hasFooter = true, type } = Astro.props;
 ---
 
 <script>
@@ -27,7 +27,7 @@ const { hasFooter = true } = Astro.props;
   </head>
 
   <!-- todo: should add class tracking-tight for letter spacing -->
-  <body class="antialiased text-default bg-page">
+  <body class:list={['antialiased text-default bg-page', { [`page-${type}`]: type }]}>
     <svg width="0" height="0" viewBox="0 0 1920 49" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask id="promo-top-mask">
         <path

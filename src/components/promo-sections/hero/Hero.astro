@@ -1,0 +1,58 @@
+---
+import '~/components/landing-sections/hero/hero.css';
+import SvgOverSkull from './assets/shape-over.svg?raw';
+import Logo from './assets/symbol-vertical.svg?raw';
+import Player from '~/components/player/Player.astro';
+import Icon from '~/components/icon/Icon.astro';
+import Countdown from '../../countdown/Countdown.astro';
+---
+
+<section id="landing-hero" class="hero hero--promo">
+  <div class="hero__bg" role="presentation">
+    <div class="skull">
+      <picture>
+        <source srcset="/images/skull-fire.webp" type="image/webp" />
+        <img class="skull-img" src="/images/skull-fire.png" loading="lazy" decoding="async" alt="Skull" />
+      </picture>
+
+      <svg class="skull-img" viewBox="0 0 1918 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect id="skull-flame-tracker" x="935" y="465" width="15" height="14" fill="none"></rect>
+      </svg>
+      <video autoplay loop muted playsinline class="skull-flame" preload="auto">
+        <source src="/images/fire_best_VP9.webm" type="video/webm" />
+      </video>
+    </div>
+  </div>
+
+  <div class="hero__inner inner">
+    <div class="hero__logo" role="presentation">
+      <Fragment set:html={Logo} />
+    </div>
+
+    <!-- Make one big h1 -->
+    <div class="hero__info">
+      <div class="opening">
+        <h1 class="opening-title">Открытие <span class="font-light">через</span></h1>
+      </div>
+
+      <div class="hero__countdown">
+        <Countdown />
+      </div>
+
+      <div class="hero__player">
+        <Player />
+        <div class="hero__quote">
+          <span>Тут фишек много для людей, эмоций, страсти и идей</span>
+        </div>
+      </div>
+
+      <div class="hero__footer">
+        <a href="/" class="button hero__reg">Регистрация</a>
+        <a href="/" class="button hero__download">
+          <Icon class="mr-1" width="1.1rem" height="1.1rem" name="download" />
+          Скачать
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

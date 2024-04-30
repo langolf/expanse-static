@@ -1,0 +1,24 @@
+---
+import '~/components/landing-sections/features/features.css';
+import imageFeaturesTitleSvgRu from './assets/features-ru.svg?raw';
+import PromoFeatures from '../../promo-features/PromoFeatures.astro';
+---
+
+<section id="promo-features" class="landing-features">
+  <div class="landing-features__inner inner">
+    <div class="landing-features__header" aria-label="title">
+      <h1>Особенности</h1>
+      <Fragment set:html={imageFeaturesTitleSvgRu} />
+    </div>
+
+    <PromoFeatures />
+
+    <div class="landing-features__footer">
+      <strong>x1</strong>
+      <span>
+        Получение<br />
+        Adena, Drop, Spoil, EXP и SP
+      </span>
+    </div>
+  </div>
+</section>

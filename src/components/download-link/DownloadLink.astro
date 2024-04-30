@@ -1,0 +1,15 @@
+---
+import './download-link.css';
+import Icon from '~/components/icon/Icon.astro';
+const { type, title } = Astro.props;
+---
+
+<a href="/" class="download-link">
+  <div class="download-link__icon">
+    <Icon name={type} />
+  </div>
+
+  <span class="download-link__title">
+    {title}
+  </span>
+</a>

@@ -1,0 +1,90 @@
+---
+import './files.css';
+import DownloadLink from '../../download-link/DownloadLink.astro';
+
+const files = [
+  {
+    title: 'Клиент',
+    description: 'Чистый клиент Lineage 2 Essence! Нуждается в пропатчивании.',
+    links: [
+      {
+        title: 'Google Drive',
+        url: 'https://google.com',
+        icon: 'client-google',
+      },
+      {
+        title: 'Mega',
+        url: 'https://google.com',
+        icon: 'client-m',
+      },
+    ],
+  },
+  {
+    title: 'Updater файлов',
+    description: 'Для обновления клиента, положите в папку с игрой и запустите.',
+    links: [
+      {
+        title: 'Google Drive',
+        url: 'https://google.com',
+        icon: 'client-google',
+      },
+      {
+        title: 'Mega',
+        url: 'https://google.com',
+        icon: 'client-m',
+      },
+      {
+        title: 'С сайта',
+        url: 'https://google.com',
+        icon: 'client-browser',
+      },
+    ],
+  },
+  {
+    title: 'Патч для<br/>сервера',
+    description: 'Скачайте и разархивируйте в папку с игрой с заменой файлов.',
+    links: [
+      {
+        title: 'Google Drive',
+        url: 'https://google.com',
+        icon: 'client-google',
+      },
+      {
+        title: 'Mega',
+        url: 'https://google.com',
+        icon: 'client-m',
+      },
+    ],
+  },
+];
+---
+
+<section id="promo-files" class="promo-files">
+  <div class="promo-files__inner inner">
+    <div class="promo-files__header">
+      <h1><b>Файлы</b> игры</h1>
+      <p>Для игры на наших серверах, вам необходимо скачать и установить файлы клиента и патча.</p>
+
+      <img src="/images/sword.webp" alt="sword" role="presentation" loading="lazy" decoding="async" />
+    </div>
+
+    <div class="promo-files__columns">
+      {
+        files.map((file, index) => (
+          <div class="promo-files__column">
+            <div class="promo-files__column-header">
+              <h2 set:html={file.title} />
+              <p>{file.description}</p>
+            </div>
+
+            <div class="promo-files__column-links">
+              {file.links.map((link, index) => (
+                <DownloadLink title={link.title} type={link.icon} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
