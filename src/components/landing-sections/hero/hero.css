@@ -300,6 +300,8 @@
 }
 
 .hero--promo {
+  max-height: 100dvh;
+  
   .hero__bg {
     &::before {
       content: '';
@@ -311,12 +313,6 @@
       background: linear-gradient(180deg, rgba(17, 15, 20, 0) 27%, rgba(255, 77, 6, 0.5) 100%);
       opacity: 0.5;
     }
-  }
-  
-  .hero__logo {
-    width: 5.7rem;
-    height: 241px;
-    margin-top: -6rem;
   }
   
   .hero__info {
@@ -337,6 +333,16 @@
   }
   
   @media screen(md) {
+    .hero__logo {
+      width: 5.7rem;
+      margin-top: -6rem;
+    }
+    
+    .skull-img {
+      height: 109vh;
+      transform: translate(25%, 0);
+    }
+    
     .hero__info {
       .opening {
         &::before {

@@ -403,9 +403,10 @@
 
 .topline--promo {
   .topline__reg,
+  .topline__reg.mobile,
   .topline__login,
   .topline__online {
-    display: none;
+    display: none !important;
   }
   
   .topline__nav {
